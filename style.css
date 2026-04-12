@@ -41,6 +41,11 @@
   --color-accent:       #c5a55a;
   --color-accent-hover: #dbb96e;
 
+  /* Contact section warm palette */
+  --color-contact-bg:      #1a1208;
+  --color-contact-surface: #231a0a;
+  --color-contact-border:  oklch(from #c5a55a l c h / 0.25);
+
   /* Radius & shadow */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -246,33 +251,34 @@ section p {
 
 section p strong { color: var(--color-text); }
 
-/* --- Portfolio --- */
+/* --- Portfolio (Behold) --- */
 .portfolio {
   background: var(--color-surface);
 }
 
-.portfolio-grid {
+.portfolio-sub {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  letter-spacing: 0.04em;
+}
+
+.portfolio-sub a {
+  color: var(--color-accent);
+}
+
+.behold-wrapper {
   max-width: var(--content-default);
   margin-inline: auto;
   padding-inline: var(--space-6);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
-  gap: var(--space-4);
-  padding-top: var(--space-6);
+  padding-bottom: var(--space-4);
 }
 
-.portfolio-grid img {
+/* Override Behold widget to match site palette */
+behold-widget {
+  --behold-font-family: var(--font-body);
+  display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.portfolio-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: var(--shadow-lg);
 }
 
 /* --- Booking --- */
@@ -341,27 +347,66 @@ section p strong { color: var(--color-text); }
   letter-spacing: 0.04em;
 }
 
-/* --- Contact --- */
+/* --- Contact (Warm Coloured Panel) --- */
 .contact {
-  background: var(--color-bg);
+  background: var(--color-contact-bg);
+  border-top: 1px solid var(--color-contact-border);
+  border-bottom: 1px solid var(--color-contact-border);
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
 }
 
-.contact iframe {
-  margin-block: var(--space-6);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  filter: grayscale(1) contrast(1.1);
+.contact-inner {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.contact-details h2 {
+  margin-bottom: var(--space-6);
+}
+
+.contact-address {
+  color: var(--color-text-muted);
+  line-height: 1.9;
+  margin-bottom: var(--space-6);
+}
+
+.contact-address strong {
+  color: var(--color-text);
+  display: block;
+  font-size: var(--text-lg);
+  font-family: var(--font-display);
+  margin-bottom: var(--space-1);
 }
 
 .contact-email {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
+  color: var(--color-text-muted);
+}
+
+.contact-map {
+  height: 340px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 0 0 2px var(--color-contact-border), var(--shadow-lg);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* Full colour map — no greyscale */
+  filter: none;
 }
 
 .socials {
   display: flex;
   gap: var(--space-6);
   flex-wrap: wrap;
-  margin-top: var(--space-4);
 }
 
 .socials a {
@@ -389,12 +434,16 @@ footer {
 }
 
 /* --- Mobile --- */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .hero-content h1 { letter-spacing: 0.02em; }
 
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-2);
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .contact-map {
+    height: 260px;
   }
 
   .reviews-grid {

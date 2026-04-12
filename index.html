@@ -28,6 +28,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
 
+  <!-- Behold Instagram Feed Widget -->
+  <script>
+    (() => {
+      const d = document, s = d.createElement("script");
+      s.type = "module";
+      s.src = "https://w.behold.so/widget.js";
+      d.head.append(s);
+    })();
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -59,14 +69,14 @@
       <p>Experienced tattoo artist specialising in blackwork and traditional styles with over 8 years of experience. Located inside <strong>Mr Snips Barbers</strong> in the heart of York.</p>
     </section>
 
+    <!-- Portfolio: Live Instagram feed via Behold -->
     <section class="portfolio">
       <div class="container">
         <h2>Portfolio</h2>
+        <p class="portfolio-sub">Latest work from <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer">@sinatattooer</a></p>
       </div>
-      <div class="portfolio-grid">
-        <img src="images/tattoo1.jpg" alt="Blackwork geometric tattoo by Sina" width="400" height="400" loading="lazy" decoding="async" />
-        <img src="images/tattoo2.jpg" alt="Traditional style tattoo by Sina" width="400" height="400" loading="lazy" decoding="async" />
-        <img src="images/tattoo3.jpg" alt="Custom blackwork tattoo by Sina" width="400" height="400" loading="lazy" decoding="async" />
+      <div class="behold-wrapper">
+        <behold-widget feed-id="Q0HZVWoPpxhbtybaeSIp"></behold-widget>
       </div>
     </section>
 
@@ -95,25 +105,36 @@
       </div>
     </section>
 
-    <section class="contact container">
-      <h2>Contact &amp; Studio</h2>
-      <p>Located inside <strong>Mr Snips Barbers</strong>, 23 Yarburgh Wy., York YO10 5HD</p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk"
-        width="100%"
-        height="300"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Sina Tattooer location on Google Maps"
-      ></iframe>
-      <p class="contact-email">Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
-      <nav class="socials" aria-label="Social media links">
-        <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://facebook.com/sinatattooer" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener noreferrer">Google Reviews</a>
-      </nav>
+    <!-- Contact & Map — warm coloured panel -->
+    <section class="contact">
+      <div class="contact-inner">
+        <div class="contact-details">
+          <h2>Find the Studio</h2>
+          <p class="contact-address">
+            <strong>Mr Snips Barbers</strong><br />
+            23 Yarburgh Wy.<br />
+            York, YO10 5HD
+          </p>
+          <p class="contact-email">Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
+          <nav class="socials" aria-label="Social media links">
+            <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://facebook.com/sinatattooer" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener noreferrer">Google Reviews</a>
+          </nav>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Sina Tattooer location on Google Maps"
+          ></iframe>
+        </div>
+      </div>
     </section>
   </main>
 
