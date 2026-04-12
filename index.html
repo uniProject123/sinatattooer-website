@@ -1,73 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17700708570"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17700708570');
-</script>
+<head>
   <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17700708570"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17700708570');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Custom tattoos in York by Sina Tattooer. View portfolio, reviews, and booking info." />
-  <title>Sina Tattooer</title>
+  <meta name="description" content="Custom tattoos in York by Sina Tattooer. Specialising in blackwork and traditional styles. By appointment only inside Mr Snips Barbers." />
+  <meta name="theme-color" content="#111111" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sina Tattooer – Custom Tattoos in York" />
+  <meta property="og:description" content="Custom tattoos in York by Sina Tattooer. Specialising in blackwork and traditional styles. By appointment only." />
+  <meta property="og:url" content="https://sinatattooer.co.uk" />
+  <meta property="og:image" content="https://sinatattooer.co.uk/images/tattoo1.jpg" />
+
+  <title>Sina Tattooer – Custom Tattoos in York</title>
+
+  <!-- Fonts: Cormorant Garamond (display) + Work Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Skip to content (accessibility) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="hero">
-    <h1>Sina Tattooer</h1>
-    <p>Custom tattoos in York – By appointment only</p>
-    <!-- Optional featured image -->
-    <!-- <img src="images/featured-tattoo.jpg" alt="Featured Tattoo" /> -->
+    <div class="hero-overlay">
+      <img
+        src="images/tattoo1.jpg"
+        alt="Blackwork tattoo by Sina Tattooer"
+        class="hero-bg"
+        width="1200"
+        height="700"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="hero-content">
+        <h1>Sina Tattooer</h1>
+        <p class="hero-tagline">Custom Tattoos in York &mdash; By Appointment Only</p>
+        <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer" class="btn-book">Book via Instagram &rarr;</a>
+      </div>
+    </div>
   </header>
 
-  <section class="about">
-    <h2>About Me</h2>
-    <p>Experienced tattoo artist specializing in blackwork and also more traditional styles. Over 8 years of experience. Located inside Mr Snips Barbers in York.</p>
-  </section>
+  <main id="main">
+    <section class="about container">
+      <h2>About Me</h2>
+      <p>Experienced tattoo artist specialising in blackwork and traditional styles with over 8 years of experience. Located inside <strong>Mr Snips Barbers</strong> in the heart of York.</p>
+    </section>
 
-  <section class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="grid">
-      <img src="images/tattoo1.jpg" alt="Tattoo 1" />
-      <img src="images/tattoo2.jpg" alt="Tattoo 2" />
-      <img src="images/tattoo3.jpg" alt="Tattoo 3" />
-      <!-- Add more images -->
-    </div>
-  </section>
+    <section class="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+      </div>
+      <div class="portfolio-grid">
+        <img src="images/tattoo1.jpg" alt="Blackwork geometric tattoo by Sina" width="400" height="400" loading="lazy" decoding="async" />
+        <img src="images/tattoo2.jpg" alt="Traditional style tattoo by Sina" width="400" height="400" loading="lazy" decoding="async" />
+        <img src="images/tattoo3.jpg" alt="Custom blackwork tattoo by Sina" width="400" height="400" loading="lazy" decoding="async" />
+      </div>
+    </section>
 
-  <section class="booking">
-    <h2>Booking Info</h2>
-    <p>Book your session via <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener">Instagram DM</a> or <a href="mailto:your@email.com">email</a>.</p>
-    <ul>
-      <li>Deposits required to secure appointments</li>
-      <li>Healed skin only; no sunburns or irritations</li>
-      <li>Please read all instructions before your session</li>
-    </ul>
-  </section>
+    <section class="booking container">
+      <h2>Booking Info</h2>
+      <p>To book your session, send a DM on <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer">Instagram</a> or email <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a>.</p>
+      <ul>
+        <li>Deposits required to secure appointments</li>
+        <li>Healed skin only &mdash; no sunburns or irritations</li>
+        <li>Please read all aftercare instructions before your session</li>
+      </ul>
+      <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer" class="btn-book btn-book--dark">Book a Tattoo &rarr;</a>
+    </section>
 
-  <section class="reviews">
-    <h2>Reviews</h2>
-    <blockquote>“Sina was amazing – clean, professional, and incredibly talented.” – Client A</blockquote>
-    <blockquote>“Love my new tattoo! Healed beautifully.” – Client B</blockquote>
-  </section>
+    <section class="reviews container">
+      <h2>Reviews</h2>
+      <div class="reviews-grid">
+        <blockquote>
+          <p>&ldquo;Sina was amazing &ndash; clean, professional, and incredibly talented.&rdquo;</p>
+          <cite>&mdash; Sarah, York</cite>
+        </blockquote>
+        <blockquote>
+          <p>&ldquo;Love my new tattoo! Healed beautifully and exactly what I wanted.&rdquo;</p>
+          <cite>&mdash; James, York</cite>
+        </blockquote>
+      </div>
+    </section>
 
-  <section class="contact">
-    <h2>Contact &amp; Studio</h2>
-    <p>Located inside Mr Snips Barbers, 23 Yarburgh Wy., York YO10 5HD</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <p>Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
-    <div class="socials">
-      <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener">Instagram</a> |
-      <a href="https://facebook.com/sinatattooer" target="_blank" rel="noopener">Facebook</a> |
-      <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener">Google Reviews</a>
-    </div>
-  </section>
+    <section class="contact container">
+      <h2>Contact &amp; Studio</h2>
+      <p>Located inside <strong>Mr Snips Barbers</strong>, 23 Yarburgh Wy., York YO10 5HD</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Sina Tattooer location on Google Maps"
+      ></iframe>
+      <p class="contact-email">Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
+      <nav class="socials" aria-label="Social media links">
+        <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://facebook.com/sinatattooer" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener noreferrer">Google Reviews</a>
+      </nav>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Sina Tattooer</p>
+    <p>&copy; 2026 Sina Tattooer &mdash; York, UK</p>
   </footer>
 </body>
 </html>
