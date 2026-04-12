@@ -38,8 +38,17 @@
     })();
   </script>
 
-  <!-- SociableKIT Google Reviews Widget -->
-  <script src="https://widgets.sociablekit.com/google-reviews/widget.js" defer></script>
+  <!-- EmbedSocial Google Reviews Widget -->
+  <script>
+    (function(d, s, id) {
+      var js;
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://embedsocial.com/cdn/ht.js";
+      d.getElementsByTagName("head")[0].appendChild(js);
+    }(document, "script", "EmbedSocialHashtagScript"));
+  </script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -94,14 +103,28 @@
       <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer" class="btn-book btn-book--dark">Book a Tattoo &rarr;</a>
     </section>
 
-    <!-- Reviews: Live Google Reviews via SociableKIT -->
+    <!-- Reviews: Live Google Reviews via EmbedSocial -->
     <section class="reviews">
       <div class="container">
         <h2>Reviews</h2>
         <p class="reviews-sub">Live from <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener noreferrer">Google Reviews</a></p>
       </div>
       <div class="reviews-widget-wrapper">
-        <div class="sk-ww-google-reviews" data-embed-id="25671998"></div>
+        <div
+          class="embedsocial-hashtag"
+          data-ref="88aab0bce4aebfb8c0a45e082e4282576ff6c642"
+          data-lazyload="yes"
+        >
+          <a
+            class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding"
+            href="https://embedsocial.com/google-reviews-widget/"
+            target="_blank"
+            title="Embed Google reviews"
+          >
+            <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial" width="20" height="20" loading="lazy" />
+            <div class="es-widget-branding-text">Embed Google reviews</div>
+          </a>
+        </div>
       </div>
     </section>
 
