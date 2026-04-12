@@ -1,98 +1,407 @@
-/* Basic reset and font */
-body, h1, h2, p, ul, li, blockquote, a {
-  margin: 0; padding: 0; box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #222;
+/* ==============================================
+   ART DIRECTION: Tattoo studio — dark, editorial, craft
+   Palette: near-black surfaces, off-white text, warm gold accent
+   Typography: Cormorant Garamond (display) + Work Sans (body)
+   Density: spacious sections, tight portfolio grid
+   ============================================== */
+
+/* --- Design Tokens --- */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Work Sans', 'Helvetica Neue', sans-serif;
+
+  /* Type scale */
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-hero: clamp(3rem,     1.5rem  + 5vw,    6rem);
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* Colors */
+  --color-bg:           #0e0d0c;
+  --color-surface:      #161513;
+  --color-surface-2:    #1d1b19;
+  --color-border:       oklch(from #f5f0e8 l c h / 0.12);
+  --color-text:         #f5f0e8;
+  --color-text-muted:   #a89f94;
+  --color-text-faint:   #6b6359;
+  --color-accent:       #c5a55a;
+  --color-accent-hover: #dbb96e;
+
+  /* Radius & shadow */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-md: 0 4px 20px oklch(0 0 0 / 0.5);
+  --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.6);
+
+  --content-default: 900px;
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Base Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-8);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  line-height: 1.6;
-  background: #fefefe;
-  padding: 20px;
-  max-width: 900px;
-  margin: 0 auto;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
 }
 
-/* Header (Hero) */
-header.hero {
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul[role="list"], ol[role="list"] { list-style: none; }
+input, button, textarea, select { font: inherit; color: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+  line-height: 1.1;
+}
+
+p, li { text-wrap: pretty; max-width: 68ch; }
+
+a {
+  color: var(--color-accent);
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-accent-hover); }
+
+::selection {
+  background: oklch(from #c5a55a l c h / 0.3);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Skip Link --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent);
+  color: #111;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus { top: var(--space-4); }
+
+/* --- Container --- */
+.container {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 65vh, 700px);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 2rem;
+  padding: var(--space-6);
+  gap: var(--space-4);
 }
 
-header.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.3rem;
+.hero-content h1 {
+  font-size: var(--text-hero);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  text-shadow: 0 2px 24px oklch(0 0 0 / 0.6);
 }
 
-header.hero p {
-  font-size: 1.2rem;
-  color: #555;
+.hero-tagline {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-weight: 300;
 }
 
-/* Sections */
+/* --- CTA Button --- */
+.btn-book {
+  display: inline-block;
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  background: var(--color-accent);
+  color: #111;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  min-height: 44px;
+  min-width: 44px;
+}
+.btn-book:hover {
+  background: var(--color-accent-hover);
+  color: #111;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.btn-book:active { transform: translateY(0); }
+
+.btn-book--dark {
+  margin-top: var(--space-8);
+}
+
+/* --- Sections --- */
 section {
-  margin-bottom: 2.5rem;
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
 }
 
 section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #222;
-  padding-bottom: 0.3rem;
-}
-
-/* Portfolio grid */
-.portfolio .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-  gap: 1rem;
-}
-
-.portfolio .grid img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.portfolio .grid img:hover {
-  transform: scale(1.05);
-}
-
-/* Booking list */
-.booking ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-top: 0.5rem;
-}
-
-/* Reviews blockquotes */
-.reviews blockquote {
-  font-style: italic;
-  border-left: 4px solid #222;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-  color: #555;
-}
-
-/* Contact socials */
-.contact .socials a {
-  text-decoration: none;
-  color: #222;
-  margin: 0 0.5rem;
+  font-size: var(--text-xl);
   font-weight: 600;
+  margin-bottom: var(--space-6);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
 }
 
-.contact .socials a:hover {
-  color: #0073e6;
+section p {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-4);
 }
 
-/* Footer */
+section p strong { color: var(--color-text); }
+
+/* --- Portfolio --- */
+.portfolio {
+  background: var(--color-surface);
+}
+
+.portfolio-grid {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+}
+
+.portfolio-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.portfolio-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- Booking --- */
+.booking {
+  background: var(--color-bg);
+}
+
+.booking ul {
+  list-style: none;
+  padding: 0;
+  margin-block: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.booking ul li {
+  color: var(--color-text-muted);
+  padding-left: var(--space-6);
+  position: relative;
+}
+
+.booking ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+/* --- Reviews --- */
+.reviews {
+  background: var(--color-surface);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.reviews blockquote {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.reviews blockquote p {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0;
+  max-width: none;
+}
+
+.reviews blockquote cite {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* --- Contact --- */
+.contact {
+  background: var(--color-bg);
+}
+
+.contact iframe {
+  margin-block: var(--space-6);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  filter: grayscale(1) contrast(1.1);
+}
+
+.contact-email {
+  margin-bottom: var(--space-4);
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+
+.socials a {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.socials a:hover { color: var(--color-accent); }
+
+/* --- Footer --- */
 footer {
   text-align: center;
-  font-size: 0.9rem;
-  color: #999;
-  margin-top: 3rem;
-  padding-bottom: 1rem;
+  padding-block: var(--space-8);
+  background: var(--color-surface);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  border-top: 1px solid var(--color-border);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* --- Mobile --- */
+@media (max-width: 600px) {
+  .hero-content h1 { letter-spacing: 0.02em; }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .socials {
+    gap: var(--space-4);
+  }
 }
