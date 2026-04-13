@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17700708570"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17700708570');
+
+    /* ── Google Ads Conversion: Request Quote ──
+       Fire this event once on page load — this page is only
+       reached after a successful Tally form submission.
+       Replace CONVERSION_LABEL with your actual label from
+       Google Ads > Goals > Conversions > your conversion action. */
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17700708570/CONVERSION_LABEL'
+    });
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#111111" />
+  <title>Enquiry Received – Sina Tattooer</title>
+
+  <!-- Fonts: Cormorant Garamond (display) + Work Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Design tokens (mirrored from style.css) ── */
+    :root {
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Work Sans', 'Helvetica Neue', sans-serif;
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --color-bg:         #0e0d0c;
+      --color-surface:    #161513;
+      --color-surface-2:  #1d1b19;
+      --color-border:     oklch(from #f5f0e8 l c h / 0.1);
+      --color-border-warm:oklch(from #c5a55a l c h / 0.25);
+      --color-text:       #f5f0e8;
+      --color-text-muted: #a89f94;
+      --color-text-faint: #6b6359;
+      --color-accent:     #c5a55a;
+      --color-accent-hover:#dbb96e;
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.6);
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      min-height: 100dvh;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+    }
+
+    /* ── Checkmark animation ── */
+    .check-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--color-border-warm);
+      background: var(--color-surface-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-8);
+      box-shadow: 0 0 40px oklch(from #c5a55a l c h / 0.15);
+      animation: popIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .check-wrap svg {
+      animation: drawCheck 0.5s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.7); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* ── Content ── */
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-warm);
+      border-radius: var(--radius-lg);
+      padding: var(--space-12) var(--space-8);
+      box-shadow: var(--shadow-lg);
+      animation: fadeUp 0.7s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-4);
+      line-height: 1.1;
+    }
+
+    h1 em {
+      color: var(--color-accent);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .subtitle {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 42ch;
+      margin: 0 auto var(--space-8);
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--color-border-warm);
+      margin: 0 auto var(--space-8);
+    }
+
+    .what-next {
+      text-align: left;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+
+    .what-next h2 {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+    }
+
+    .what-next ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .what-next ul li {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      padding-left: var(--space-6);
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .what-next ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+    }
+
+    .what-next ul li strong {
+      color: var(--color-text);
+    }
+
+    /* ── Buttons ── */
+    .actions {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-8);
+      background: var(--color-accent);
+      color: #111;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition), transform var(--transition);
+      min-height: 44px;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+      color: #111;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-8);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: border-color var(--transition), color var(--transition);
+      min-height: 44px;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: var(--space-10);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      animation: fadeUp 0.6s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: var(--space-8) var(--space-6); }
+      .actions { flex-direction: column; }
+      .btn-primary, .btn-ghost { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Animated checkmark -->
+    <div class="check-wrap" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+           stroke="#c5a55a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6,17 13,24 26,10"/>
+      </svg>
+    </div>
+
+    <h1>Enquiry<br><em>Received</em></h1>
+    <p class="subtitle">
+      Thank you — Sina will review your details and get back to you
+      within <strong style="color:var(--color-text);">48 hours</strong>.
+      Please check your spam folder if you don't hear back.
+    </p>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <div class="what-next">
+      <h2>What happens next</h2>
+      <ul>
+        <li><strong>Review</strong> — Sina will look over your idea, references and placement photo</li>
+        <li><strong>Reply</strong> — You'll receive a response via email with a quote and available dates</li>
+        <li><strong>Deposit</strong> — A non-refundable deposit secures your appointment slot</li>
+        <li><strong>Design</strong> — Sina creates a custom piece tailored specifically to you</li>
+      </ul>
+    </div>
+
+    <div class="actions">
+      <a href="/" class="btn-primary">Back to Home</a>
+      <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer" class="btn-ghost">@sinatattooer</a>
+    </div>
+
+  </div>
+
+  <p class="page-footer">&copy; 2026 Sina Tattooer &mdash; York, UK</p>
+
+</body>
+</html>
