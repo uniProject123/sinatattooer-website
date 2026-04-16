@@ -22,7 +22,7 @@
   <meta property="og:title" content="Book Custom Tattoos in York: Blackwork, Fine Line, Old School, Watercolour | Sina Tattooer" />
   <meta property="og:description" content="Transform your ideas into stunning custom tattoos with Sina Tattooer in York. Specialising in Blackwork, Fine Line, Watercolour, Old School and Geometric designs. 9+ years experience in a private studio. Book your consultation today!" />
   <meta property="og:url" content="https://sinatattooer.co.uk" />
-  <meta property="og:image" content="https://sinatattooer.co.uk/images/tattoo1.jpg" />
+  <meta property="og:image" content="https://sinatattooer.co.uk/images/tattoo1.webp" />
 
   <title>Book Custom Tattoos in York: Blackwork, Fine Line, Old School, Watercolour | Sina Tattooer</title>
 
@@ -35,7 +35,7 @@
     "description": "Custom blackwork, fine line, watercolour and geometric tattoos in York. Private studio with 9+ years experience. By appointment only.",
     "url": "https://sinatattooer.co.uk",
     "email": "contact@sinatattooer.co.uk",
-    "image": "https://sinatattooer.co.uk/images/tattoo1.jpg",
+    "image": "https://sinatattooer.co.uk/images/tattoo1.webp",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "23 Yarburgh Way, Mr Snips Barbers",
@@ -82,7 +82,6 @@
         s.src = "https://w.behold.so/widget.js";
         d.head.append(s);
       };
-      // Load when page is idle or on intersection
       if ('requestIdleCallback' in window) {
         requestIdleCallback(loadBeholdWidget, { timeout: 2000 });
       } else {
@@ -102,7 +101,6 @@
         js.src = "https://embedsocial.com/cdn/ht.js";
         d.getElementsByTagName("head")[0].appendChild(js);
       };
-      // Load when page is idle or on intersection
       if ('requestIdleCallback' in window) {
         requestIdleCallback(loadEmbedSocial, { timeout: 3000 });
       } else {
@@ -116,6 +114,47 @@
 <body>
   <!-- Skip to content (accessibility) -->
   <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Sina Tattooer — back to top">Sina Tattooer</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navMenu" role="list">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#styles" class="nav-link">Styles</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="nav-link">Find Us</a></li>
+      </ul>
+      <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta">Book a Tattoo</a>
+    </div>
+  </nav>
+
+  <script>
+    // Mobile toggle
+    const toggle = document.getElementById('navToggle');
+    const menu   = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('is-open');
+    });
+    // Close menu on link click (mobile)
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('is-open');
+      });
+    });
+    // Scroll shadow
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
 
   <header class="hero">
     <div class="hero-overlay">
@@ -138,13 +177,13 @@
   </header>
 
   <main id="main">
-    <section class="about container">
+    <section class="about container" id="about">
       <h2>About Me</h2>
       <p>With over 9 years of professional tattooing experience, Sina creates deeply personal, custom tattoo designs that are as unique as each client. Based inside <strong>Mr Snips Barbers</strong> in the Badger Hill area of York, the private studio setting ensures a relaxed, one-on-one experience from first consultation through to aftercare.</p>
       <p>Sina's approach is built on collaboration &mdash; every design begins with your idea, your story, and your vision. Whether you're after something bold and graphic or delicate and intricate, the goal is always to bring your concept to life in a style that suits your skin and personality.</p>
     </section>
 
-    <section class="services container">
+    <section class="services container" id="styles">
       <h2>Tattoo Styles</h2>
       <p>Specialising in a range of styles to suit every client:</p>
       <ul>
@@ -158,7 +197,7 @@
     </section>
 
     <!-- Portfolio: Live Instagram feed via Behold -->
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <div class="container">
         <h2>Portfolio</h2>
         <p class="portfolio-sub">Latest work from <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer">@sinatattooer</a></p>
@@ -168,7 +207,7 @@
       </div>
     </section>
 
-    <section class="booking container">
+    <section class="booking container" id="booking">
       <h2>Booking Info</h2>
       <p>Ready to get your next tattoo? Fill in the booking form &mdash; it only takes 2 minutes. Sina aims to respond within <strong>48 hours</strong>. You can also reach out directly at <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a>.</p>
       <ul>
@@ -206,14 +245,14 @@
       </div>
     </section>
 
-    <!-- Contact & Map — warm coloured panel -->
-    <section class="contact">
+    <!-- Contact & Map -->
+    <section class="contact" id="contact">
       <div class="contact-inner">
         <div class="contact-details">
           <h2>Find the Studio</h2>
           <p class="contact-address">
             <strong>Mr Snips Barbers</strong><br />
-            23 Yarburgh Wy.<br />
+            23 Yarburgh Way<br />
             York, YO10 5HD
           </p>
           <p class="contact-email">Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
