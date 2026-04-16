@@ -73,26 +73,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
 
-  <!-- Behold Instagram Feed Widget -->
+  <!-- Behold Instagram Feed Widget (Lazy-loaded) -->
   <script>
     (() => {
-      const d = document, s = d.createElement("script");
-      s.type = "module";
-      s.src = "https://w.behold.so/widget.js";
-      d.head.append(s);
+      const loadBeholdWidget = () => {
+        const d = document, s = d.createElement("script");
+        s.type = "module";
+        s.src = "https://w.behold.so/widget.js";
+        d.head.append(s);
+      };
+      // Load when page is idle or on intersection
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadBeholdWidget, { timeout: 2000 });
+      } else {
+        setTimeout(loadBeholdWidget, 1000);
+      }
     })();
   </script>
 
-  <!-- EmbedSocial Google Reviews Widget -->
+  <!-- EmbedSocial Google Reviews Widget (Lazy-loaded) -->
   <script>
-    (function(d, s, id) {
-      var js;
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://embedsocial.com/cdn/ht.js";
-      d.getElementsByTagName("head")[0].appendChild(js);
-    }(document, "script", "EmbedSocialHashtagScript"));
+    (() => {
+      const loadEmbedSocial = () => {
+        const d = document, s = "script", id = "EmbedSocialHashtagScript";
+        if (d.getElementById(id)) { return; }
+        const js = d.createElement(s);
+        js.id = id;
+        js.src = "https://embedsocial.com/cdn/ht.js";
+        d.getElementsByTagName("head")[0].appendChild(js);
+      };
+      // Load when page is idle or on intersection
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadEmbedSocial, { timeout: 3000 });
+      } else {
+        setTimeout(loadEmbedSocial, 2000);
+      }
+    })();
   </script>
 
   <link rel="stylesheet" href="style.css" />
@@ -103,10 +119,8 @@
 
   <header class="hero">
     <div class="hero-overlay">
-      <picture>
-        <source srcset="images/tattoo1.webp" type="image/webp" />
-        <img
-          src="images/tattoo1.jpg"
+      <img
+          src="images/tattoo1.webp"
           alt="Custom blackwork tattoo by Sina Tattooer, York"
           class="hero-bg"
           width="1200"
@@ -115,7 +129,6 @@
           decoding="async"
           fetchpriority="high"
         />
-      </picture>
       <div class="hero-content">
         <h1>Sina Tattooer</h1>
         <p class="hero-tagline">Providing High-Quality Custom Tattoos in York,<br>Bringing Your Ideas To Life.</p>
