@@ -17,12 +17,27 @@
   <meta name="theme-color" content="#111111" />
   <link rel="canonical" href="https://sinatattooer.co.uk/" />
 
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Book Custom Tattoos in York: Blackwork, Fine Line, Old School, Watercolour | Sina Tattooer" />
   <meta property="og:description" content="Transform your ideas into stunning custom tattoos with Sina Tattooer in York. Specialising in Blackwork, Fine Line, Watercolour, Old School and Geometric designs. 9+ years experience in a private studio. Book your consultation today!" />
   <meta property="og:url" content="https://sinatattooer.co.uk" />
   <meta property="og:image" content="https://sinatattooer.co.uk/images/tattoo1.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="700" />
+  <meta property="og:image:alt" content="Custom blackwork tattoo by Sina Tattooer, York" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book Custom Tattoos in York: Blackwork, Fine Line, Old School, Watercolour | Sina Tattooer" />
+  <meta name="twitter:description" content="Transform your ideas into stunning custom tattoos with Sina Tattooer in York. Specialising in Blackwork, Fine Line, Watercolour, Old School and Geometric designs. 9+ years experience in a private studio. Book your consultation today!" />
+  <meta name="twitter:image" content="https://sinatattooer.co.uk/images/tattoo1.webp" />
+  <meta name="twitter:image:alt" content="Custom blackwork tattoo by Sina Tattooer, York" />
 
   <title>Book Custom Tattoos in York: Blackwork, Fine Line, Old School, Watercolour | Sina Tattooer</title>
 
@@ -127,34 +142,16 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#styles" class="nav-link">Styles</a></li>
         <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#booking" class="nav-link">Booking</a></li>
         <li><a href="#contact" class="nav-link">Find Us</a></li>
+        <!-- Mobile-only real Book CTA inside menu -->
+        <li class="nav-mobile-cta">
+          <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta--mobile">Book a Tattoo</a>
+        </li>
       </ul>
       <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta">Book a Tattoo</a>
     </div>
   </nav>
-
-  <script>
-    // Mobile toggle
-    const toggle = document.getElementById('navToggle');
-    const menu   = document.getElementById('navMenu');
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('is-open');
-    });
-    // Close menu on link click (mobile)
-    menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.setAttribute('aria-expanded', 'false');
-        menu.classList.remove('is-open');
-      });
-    });
-    // Scroll shadow
-    const nav = document.getElementById('site-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-  </script>
 
   <header class="hero">
     <div class="hero-overlay">
@@ -186,7 +183,7 @@
     <section class="services container" id="styles">
       <h2>Tattoo Styles</h2>
       <p>Specialising in a range of styles to suit every client:</p>
-      <ul>
+      <ul role="list">
         <li><strong>Blackwork</strong> &mdash; Bold, graphic designs using solid black ink. Ideal for striking geometric patterns, illustrative work, and cover-ups.</li>
         <li><strong>Fine Line</strong> &mdash; Precise, delicate linework perfect for minimalist designs, detailed portraits, and subtle, elegant tattoos.</li>
         <li><strong>Watercolour</strong> &mdash; Soft, fluid colour washes that mimic the look of watercolour painting, bringing a painterly, artistic feel to your tattoo.</li>
@@ -210,7 +207,7 @@
     <section class="booking container" id="booking">
       <h2>Booking Info</h2>
       <p>Ready to get your next tattoo? Fill in the booking form &mdash; it only takes 2 minutes. Sina aims to respond within <strong>48 hours</strong>. You can also reach out directly at <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a>.</p>
-      <ul>
+      <ul role="list">
         <li>Include your idea, placement, size, and any reference images in the form</li>
         <li>A non-refundable deposit is required to secure your appointment</li>
         <li>Please arrive with clean, healed skin &mdash; no sunburn or active irritation</li>
@@ -265,8 +262,8 @@
         <div class="contact-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk"
-            width="100%"
-            height="100%"
+            width="600"
+            height="340"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
@@ -281,5 +278,34 @@
   <footer>
     <p>&copy; 2026 Sina Tattooer &mdash; York, UK</p>
   </footer>
+
+  <!-- Nav JS moved to bottom of body to avoid race conditions -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const menu   = document.getElementById('navMenu');
+      const nav    = document.getElementById('site-nav');
+
+      // Mobile hamburger toggle
+      toggle.addEventListener('click', function () {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('is-open');
+      });
+
+      // Close menu when any link is clicked
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('is-open');
+        });
+      });
+
+      // Scroll shadow on nav
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>

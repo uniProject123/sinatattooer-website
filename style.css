@@ -69,7 +69,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-height) + 8px);
+  scroll-padding-top: calc(var(--nav-height) + 16px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -217,7 +217,7 @@ a:hover { color: var(--color-accent-hover); }
 }
 .nav-link:hover { color: var(--color-text); }
 
-/* Booking CTA button */
+/* Desktop booking CTA */
 .nav-cta {
   margin-left: auto;
   flex-shrink: 0;
@@ -244,6 +244,9 @@ a:hover { color: var(--color-accent-hover); }
   box-shadow: var(--shadow-md);
 }
 .nav-cta:active { transform: translateY(0); }
+
+/* Hide mobile-only CTA item on desktop */
+.nav-mobile-cta { display: none; }
 
 /* Hamburger toggle — hidden on desktop */
 .nav-toggle {
@@ -272,7 +275,9 @@ a:hover { color: var(--color-accent-hover); }
 /* Mobile nav */
 @media (max-width: 680px) {
   .nav-toggle { display: flex; }
-  .nav-cta { display: none; } /* shown inside mobile menu instead */
+
+  /* Hide desktop CTA button */
+  .nav-inner > .nav-cta { display: none; }
 
   .nav-links {
     display: none;
@@ -285,12 +290,12 @@ a:hover { color: var(--color-accent-hover); }
     gap: 0;
     background: #111;
     border-top: 1px solid oklch(from #f5f0e8 l c h / 0.08);
-    padding-bottom: var(--space-4);
+    padding-bottom: var(--space-6);
   }
 
   .nav-links.is-open { display: flex; }
 
-  .nav-links li { border-bottom: 1px solid oklch(from #f5f0e8 l c h / 0.06); }
+  .nav-links > li { border-bottom: 1px solid oklch(from #f5f0e8 l c h / 0.06); }
 
   .nav-link {
     display: block;
@@ -300,22 +305,21 @@ a:hover { color: var(--color-accent-hover); }
   }
   .nav-link:hover { color: var(--color-accent); background: oklch(from #c5a55a l c h / 0.06); }
 
-  /* Book button inside mobile menu */
-  .nav-links::after {
-    content: 'Book a Tattoo';
+  /* Real tappable Book CTA inside mobile menu */
+  .nav-mobile-cta {
     display: block;
-    margin: var(--space-4) var(--space-6) 0;
+    border-bottom: none !important;
+    padding: var(--space-4) var(--space-6) 0;
+  }
+
+  .nav-cta--mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
     padding: var(--space-3) var(--space-6);
-    background: var(--color-accent);
-    color: #111;
     font-size: var(--text-sm);
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    pointer-events: none; /* purely decorative — real link below */
+    min-height: 44px;
   }
 }
 
@@ -483,9 +487,35 @@ behold-widget {
   color: var(--color-accent);
 }
 
+.booking-cta-note {
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
 /* --- Reviews --- */
 .reviews {
   background: var(--color-surface);
+}
+
+.reviews-sub {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-4);
+}
+
+.reviews-sub a {
+  color: var(--color-accent);
+}
+
+.reviews-widget-wrapper {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  padding-bottom: var(--space-4);
 }
 
 .reviews-grid {
