@@ -104,15 +104,19 @@
 
   <header class="hero">
     <div class="hero-overlay">
-      <img
-        src="images/tattoo1.jpg"
-        alt="Custom blackwork tattoo by Sina Tattooer, York"
-        class="hero-bg"
-        width="1200"
-        height="700"
-        loading="eager"
-        decoding="async"
-      />
+      <picture>
+        <source srcset="images/tattoo1.webp" type="image/webp" />
+        <img
+          src="images/tattoo1.jpg"
+          alt="Custom blackwork tattoo by Sina Tattooer, York"
+          class="hero-bg"
+          width="1200"
+          height="700"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </picture>
       <div class="hero-content">
         <h1>Sina Tattooer</h1>
         <p class="hero-tagline">Providing High-Quality Custom Tattoos in York,<br>Bringing Your Ideas To Life.</p>
