@@ -431,6 +431,87 @@ section p {
 
 section p strong { color: var(--color-text); }
 
+/* --- About (Editorial Split) --- */
+.about {
+  background: var(--color-surface);
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
+  align-items: center;
+}
+
+/* Portrait */
+.about-portrait {
+  position: relative;
+}
+
+.about-portrait img {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  border: 1px solid oklch(from var(--color-accent) l c h / 0.25);
+  box-shadow:
+    0 0 0 1px oklch(from var(--color-accent) l c h / 0.08),
+    0 8px 32px oklch(0 0 0 / 0.5),
+    0 0 60px oklch(from var(--color-accent) l c h / 0.06);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-portrait img:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 0 1px oklch(from var(--color-accent) l c h / 0.15),
+    0 12px 40px oklch(0 0 0 / 0.6),
+    0 0 80px oklch(from var(--color-accent) l c h / 0.1);
+}
+
+/* Text column */
+.about-text h2 {
+  margin-bottom: var(--space-4);
+}
+
+.about-lead {
+  font-size: var(--text-lg) !important;
+  color: var(--color-text) !important;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.about-divider {
+  border: none;
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  margin-block: var(--space-6);
+}
+
+/* Scroll-reveal animation */
+.about-portrait,
+.about-text {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-text {
+  transition-delay: 0.15s;
+}
+
+.about-portrait.is-visible,
+.about-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* --- Portfolio (Behold) --- */
 .portfolio {
   background: var(--color-surface);
@@ -640,6 +721,29 @@ footer {
 /* --- Mobile --- */
 @media (max-width: 700px) {
   .hero-content h1 { letter-spacing: 0.02em; }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    text-align: center;
+  }
+
+  .about-portrait {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-portrait img {
+    max-width: 280px;
+  }
+
+  .about-divider {
+    margin-inline: auto;
+  }
+
+  .about-text p {
+    margin-inline: auto;
+  }
 
   .contact-inner {
     grid-template-columns: 1fr;
