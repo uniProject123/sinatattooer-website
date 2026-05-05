@@ -2,85 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-ND862NVQ');</script>
+  <!-- End Google Tag Manager -->
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Ads Conversion (fires once per session to avoid duplicate counting on refresh/back-forward) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17700708570"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-17700708570');
-
-    /* ── Google Ads Conversion: Booking Enquiry ──
-       Fires on page load — this page is only reached after
-       a successful Tally form submission. */
-    gtag('event', 'conversion', {
-      'send_to': 'AW-17700708570/uIK6CO-XzZscENrBrfhB',
-      'value': 50.0,
-      'currency': 'GBP'
-    });
+    try {
+      if (!sessionStorage.getItem('sina_conv_fired')) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17700708570/uIK6CO-XzZscENrBrfhB',
+          'value': 50.0,
+          'currency': 'GBP'
+        });
+        sessionStorage.setItem('sina_conv_fired', '1');
+      }
+    } catch (e) {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17700708570/uIK6CO-XzZscENrBrfhB',
+        'value': 50.0,
+        'currency': 'GBP'
+      });
+    }
   </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" content="#0e0d0c" />
   <title>Enquiry Received – Sina Tattooer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
 
   <!-- Fonts: Cormorant Garamond (display) + Work Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="style.css" />
+
   <style>
-    /* ── Design tokens (mirrored from style.css) ── */
-    :root {
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Work Sans', 'Helvetica Neue', sans-serif;
-      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
-      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
-      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
-      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
-      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
-      --space-2:  0.5rem;
-      --space-3:  0.75rem;
-      --space-4:  1rem;
-      --space-6:  1.5rem;
-      --space-8:  2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --color-bg:         #0e0d0c;
-      --color-surface:    #161513;
-      --color-surface-2:  #1d1b19;
-      --color-border:     oklch(from #f5f0e8 l c h / 0.1);
-      --color-border-warm:oklch(from #c5a55a l c h / 0.25);
-      --color-text:       #f5f0e8;
-      --color-text-muted: #a89f94;
-      --color-text-faint: #6b6359;
-      --color-accent:     #c5a55a;
-      --color-accent-hover:#dbb96e;
-      --radius-sm: 0.25rem;
-      --radius-md: 0.5rem;
-      --radius-lg: 0.75rem;
-      --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.6);
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
-
+    /* Page-specific layout — design tokens come from style.css */
     body {
-      min-height: 100dvh;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      line-height: 1.7;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -89,18 +67,17 @@
       text-align: center;
     }
 
-    /* ── Checkmark animation ── */
     .check-wrap {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      border: 2px solid var(--color-border-warm);
+      border: 2px solid var(--color-contact-border);
       background: var(--color-surface-2);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto var(--space-8);
-      box-shadow: 0 0 40px oklch(from #c5a55a l c h / 0.15);
+      box-shadow: 0 0 40px rgba(197, 165, 90, 0.15);
       animation: popIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
@@ -119,12 +96,11 @@
       to { stroke-dashoffset: 0; }
     }
 
-    /* ── Content ── */
     .card {
       max-width: 520px;
       width: 100%;
       background: var(--color-surface);
-      border: 1px solid var(--color-border-warm);
+      border: 1px solid var(--color-contact-border);
       border-radius: var(--radius-lg);
       padding: var(--space-12) var(--space-8);
       box-shadow: var(--shadow-lg);
@@ -137,12 +113,9 @@
     }
 
     h1 {
-      font-family: var(--font-display);
       font-size: var(--text-2xl);
       font-weight: 700;
-      color: var(--color-text);
       margin-bottom: var(--space-4);
-      line-height: 1.1;
     }
 
     h1 em {
@@ -152,16 +125,19 @@
     }
 
     .subtitle {
-      font-size: var(--text-base);
       color: var(--color-text-muted);
       max-width: 42ch;
       margin: 0 auto var(--space-8);
     }
 
+    .subtitle strong {
+      color: var(--color-text);
+    }
+
     .divider {
       width: 48px;
       height: 1px;
-      background: var(--color-border-warm);
+      background: var(--color-contact-border);
       margin: 0 auto var(--space-8);
     }
 
@@ -210,7 +186,6 @@
       color: var(--color-text);
     }
 
-    /* ── Buttons ── */
     .actions {
       display: flex;
       gap: var(--space-3);
@@ -265,7 +240,6 @@
       color: var(--color-accent);
     }
 
-    /* ── Footer ── */
     .page-footer {
       margin-top: var(--space-10);
       font-size: var(--text-xs);
@@ -290,6 +264,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND862NVQ" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="card">
 
@@ -304,7 +282,7 @@
     <h1>Enquiry<br><em>Received</em></h1>
     <p class="subtitle">
       Thank you — Sina will review your details and get back to you
-      within <strong style="color:var(--color-text);">48 hours</strong>.
+      within <strong>48 hours</strong>.
       Please check your spam folder if you don't hear back.
     </p>
 
@@ -327,7 +305,11 @@
 
   </div>
 
-  <p class="page-footer">&copy; 2026 Sina Tattooer &mdash; York, UK</p>
+  <p class="page-footer">&copy; <span id="footer-year">2026</span> Sina Tattooer &mdash; York, UK</p>
 
+  <script>
+    var y = document.getElementById('footer-year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

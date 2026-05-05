@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0e0d0c" />
+  <title>Page Not Found – Sina Tattooer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Fonts: Cormorant Garamond (display) + Work Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Page-specific layout — design tokens come from style.css */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .card {
+      max-width: 480px;
+      width: 100%;
+      background: var(--color-surface);
+      border: 1px solid var(--color-contact-border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-lg);
+      animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .error-code {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 3rem + 5vw, 7rem);
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      opacity: 0.3;
+    }
+
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+      max-width: 38ch;
+      margin-inline: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      background: var(--color-accent);
+      color: #111;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition), transform var(--transition);
+      min-height: 44px;
+    }
+
+    .btn:hover {
+      background: var(--color-accent-hover);
+      color: #111;
+      transform: translateY(-1px);
+    }
+
+    .page-footer {
+      margin-top: 2.5rem;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      animation: fadeUp 0.6s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="error-code" aria-hidden="true">404</div>
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+    <a href="/" class="btn">Back to Home</a>
+  </div>
+
+  <p class="page-footer">&copy; <span id="footer-year">2026</span> Sina Tattooer &mdash; York, UK</p>
+
+  <script>
+    var y = document.getElementById('footer-year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
