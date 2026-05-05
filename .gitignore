@@ -10,3 +10,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Local-only n8n workflow exports (not deployed with site)
+n8n-workflows/
