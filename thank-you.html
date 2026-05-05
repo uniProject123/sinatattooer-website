@@ -38,6 +38,28 @@
     }
   </script>
 
+  <!-- GA4 booking enquiry event (pushed to dataLayer; GTM forwards to GA4 via a Custom Event trigger on `book_enquiry`) -->
+  <script>
+    (function () {
+      var payload = {
+        event: 'book_enquiry',
+        event_category: 'booking',
+        event_label: 'tally_form_complete',
+        value: 50.0,
+        currency: 'GBP'
+      };
+      window.dataLayer = window.dataLayer || [];
+      try {
+        if (!sessionStorage.getItem('sina_ga4_book_fired')) {
+          window.dataLayer.push(payload);
+          sessionStorage.setItem('sina_ga4_book_fired', '1');
+        }
+      } catch (e) {
+        window.dataLayer.push(payload);
+      }
+    })();
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#0e0d0c" />
