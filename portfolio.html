@@ -35,8 +35,8 @@
   <meta property="og:locale" content="en_GB" />
   <meta property="og:site_name" content="Sina Tattooer" />
   <meta property="og:image" content="https://sinatattooer.co.uk/images/tattoo1.webp" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="700" />
+  <meta property="og:image:width" content="900" />
+  <meta property="og:image:height" content="1200" />
   <meta property="og:image:alt" content="Custom tattoo by Sina Tattooer, York" />
 
   <title>Portfolio & Tattoo Styles | Sina Tattooer York</title>
@@ -67,8 +67,61 @@
   }
   </script>
 
+  <!-- ItemList Schema — tattoo style pages -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Tattoo Styles — Sina Tattooer York",
+    "description": "Tattoo styles offered by Sina Tattooer in York: Blackwork, Fine Line, Watercolour, Old School, Geometric and Cover-Up tattoos.",
+    "url": "https://sinatattooer.co.uk/portfolio",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem", "position": 1,
+        "name": "Blackwork Tattoos in York",
+        "url": "https://sinatattooer.co.uk/blackwork-tattoos-york",
+        "item": { "@type": "Service", "serviceType": "Blackwork tattoo", "name": "Blackwork Tattoos in York", "provider": { "@type": "LocalBusiness", "name": "Sina Tattooer" } }
+      },
+      {
+        "@type": "ListItem", "position": 2,
+        "name": "Fine Line Tattoos in York",
+        "url": "https://sinatattooer.co.uk/fineline-tattoos-york",
+        "item": { "@type": "Service", "serviceType": "Fine line tattoo", "name": "Fine Line Tattoos in York", "provider": { "@type": "LocalBusiness", "name": "Sina Tattooer" } }
+      },
+      {
+        "@type": "ListItem", "position": 3,
+        "name": "Watercolour Tattoos in York",
+        "url": "https://sinatattooer.co.uk/watercolour-tattoos-york",
+        "item": { "@type": "Service", "serviceType": "Watercolour tattoo", "name": "Watercolour Tattoos in York", "provider": { "@type": "LocalBusiness", "name": "Sina Tattooer" } }
+      },
+      {
+        "@type": "ListItem", "position": 4,
+        "name": "Old School Tattoos in York",
+        "url": "https://sinatattooer.co.uk/oldschool-tattoos-york",
+        "item": { "@type": "Service", "serviceType": "Old school traditional tattoo", "name": "Old School Tattoos in York", "provider": { "@type": "LocalBusiness", "name": "Sina Tattooer" } }
+      },
+      {
+        "@type": "ListItem", "position": 5,
+        "name": "Geometric Tattoos in York",
+        "url": "https://sinatattooer.co.uk/geometric-tattoos-york",
+        "item": { "@type": "Service", "serviceType": "Geometric tattoo", "name": "Geometric Tattoos in York", "provider": { "@type": "LocalBusiness", "name": "Sina Tattooer" } }
+      },
+      {
+        "@type": "ListItem", "position": 6,
+        "name": "Cover-Up Tattoos in York",
+        "url": "https://sinatattooer.co.uk/cover-up-tattoos-york",
+        "item": { "@type": "Service", "serviceType": "Cover-up tattoo", "name": "Cover-Up Tattoos in York", "provider": { "@type": "LocalBusiness", "name": "Sina Tattooer" } }
+      }
+    ]
+  }
+  </script>
+
   <link rel="manifest" href="/manifest.json" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    a.style-card-link { text-decoration: none; color: inherit; display: block; }
+  </style>
 </head>
 
 <body>
@@ -81,28 +134,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ========== NAVIGATION ========== -->
-  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Sina Tattooer — back to home">Sina Tattooer</a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navMenu" role="list">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/#about" class="nav-link">About</a></li>
-        <li><a href="portfolio.html" class="nav-link" aria-current="page">Portfolio</a></li>
-        <li><a href="/#booking" class="nav-link">Booking</a></li>
-        <li><a href="/#faq" class="nav-link">FAQ</a></li>
-        <li><a href="/#contact" class="nav-link">Find Us</a></li>
-        <!-- Mobile-only real Book CTA inside menu -->
-        <li class="nav-mobile-cta">
-          <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer"
-            class="nav-cta nav-cta--mobile">Book a Tattoo</a>
-        </li>
-      </ul>
-      <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta">Book a Tattoo</a>
-    </div>
-  </nav>
+  <div data-component="nav" data-page="portfolio"></div>
 
   <!-- Page Header -->
   <header class="page-header">
@@ -112,10 +144,12 @@
         perfect match for your next piece.</p>
     </div>
   </header>
+  <div data-component="breadcrumbs" data-items='[{"label":"Home","href":"/"},{"label":"Portfolio & Styles"}]'></div>
 
   <main id="main">
     <section class="styles container" id="styles">
       <div class="styles-grid reveal-stagger">
+        <a href="/blackwork-tattoos-york" class="style-card-link">
         <div class="style-card">
           <div class="style-card-img">
             <img src="images/style-blackwork.webp" alt="Blackwork tattoo example by Sina Tattooer" width="400"
@@ -128,6 +162,8 @@
               and cover-ups. Blackwork offers maximum visual impact and ages exceptionally well over time.</p>
           </div>
         </div>
+        </a>
+        <a href="/fineline-tattoos-york" class="style-card-link">
         <div class="style-card">
           <div class="style-card-img">
             <img src="images/style-fineline.webp" alt="Fine line tattoo example by Sina Tattooer" width="400"
@@ -140,6 +176,8 @@
               tattoos. Fine line work requires a steady hand and meticulous attention to detail.</p>
           </div>
         </div>
+        </a>
+        <a href="/watercolour-tattoos-york" class="style-card-link">
         <div class="style-card">
           <div class="style-card-img">
             <img src="images/style-watercolour.webp" alt="Watercolour tattoo example by Sina Tattooer" width="400"
@@ -152,6 +190,8 @@
               feel to your tattoo. Often combined with fine linework for a contemporary, eye-catching result.</p>
           </div>
         </div>
+        </a>
+        <a href="/oldschool-tattoos-york" class="style-card-link">
         <div class="style-card">
           <div class="style-card-img">
             <img src="images/style-oldschool.webp" alt="Old School traditional tattoo example by Sina Tattooer"
@@ -164,6 +204,8 @@
               Think anchors, roses, eagles and pin-ups — designed to stand the test of time.</p>
           </div>
         </div>
+        </a>
+        <a href="/geometric-tattoos-york" class="style-card-link">
         <div class="style-card">
           <div class="style-card-img">
             <img src="images/style-geometric.webp" alt="Geometric tattoo example by Sina Tattooer" width="400"
@@ -176,6 +218,7 @@
               compositions. Precision is key — every angle and line must be perfect.</p>
           </div>
         </div>
+        </a>
         <div class="style-card">
           <div class="style-card-img">
             <img src="images/style-abstract.webp" alt="Abstract tattoo example by Sina Tattooer" width="400"
@@ -213,10 +256,9 @@
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
 
-  <footer>
-    <p>&copy; <span id="footer-year">2026</span> Sina Tattooer &mdash; York, UK</p>
-  </footer>
+  <div data-component="footer"></div>
 
+  <script src="components.js"></script>
   <script src="main.js"></script>
 </body>
 

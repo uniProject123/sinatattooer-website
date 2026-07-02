@@ -1,0 +1,342 @@
+<!--
+  =====================================================================
+  GALLERY PAGE TEMPLATE — Sina Tattooer
+  =====================================================================
+  Pattern shared by /blackwork-tattoos-york, /fineline-tattoos-york,
+  /cover-up-tattoos-york and any future single-style landing page.
+
+  To create a new gallery page, copy this file and update only the
+  sections marked [EDIT].
+    1. <head> meta — title, description, canonical, og:url, og:title
+    2. <h1> + page-header-sub
+    3. .gallery-page-intro paragraphs (200–300 words, target keyword)
+    4. .gallery-grid — image src + alt text per slot
+    5. .style-why cards (3 cards: durability / placement / design notes)
+    6. .faq-list items (3–5 Q&A specific to this style)
+    7. JSON-LD: BreadcrumbList "name" + "item" url, Service "serviceType"
+       and "name", FAQPage to mirror visible FAQ.
+
+  Images: drop into images/gallery/<slug>/N.webp (4:5 portrait).
+  Missing images fall back to a text placeholder via onerror.
+  =====================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-ND862NVQ');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- [EDIT] description: 150–160 chars, target keyword + York + variant -->
+  <meta name="description"
+    content="Blackwork tattoos in York by Sina Tattooer — bold solid black designs, illustrative blackwork, geometric blackwork and cover-ups. Custom designs, book direct." />
+  <meta name="author" content="Sina Tattooer" />
+  <meta name="theme-color" content="#0e0d0c" />
+  <!-- [EDIT] canonical: clean URL, no .html -->
+  <link rel="canonical" href="https://sinatattooer.co.uk/blackwork-tattoos-york" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <!-- [EDIT] og:title -->
+  <meta property="og:title" content="Blackwork Tattoos in York | Sina Tattooer" />
+  <meta property="og:description"
+    content="Blackwork tattoos in York by Sina Tattooer — bold solid black designs, illustrative blackwork, geometric blackwork and cover-ups." />
+  <!-- [EDIT] og:url -->
+  <meta property="og:url" content="https://sinatattooer.co.uk/blackwork-tattoos-york" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Sina Tattooer" />
+  <meta property="og:image" content="https://sinatattooer.co.uk/images/style-blackwork.webp" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="Blackwork tattoo by Sina Tattooer, York" />
+
+  <!-- [EDIT] title -->
+  <title>Blackwork Tattoos in York | Sina Tattooer</title>
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blackwork Tattoos in York | Sina Tattooer" />
+  <meta name="twitter:description"
+    content="Blackwork tattoos in York by Sina Tattooer — bold solid black designs, illustrative blackwork, geometric blackwork and cover-ups." />
+  <meta name="twitter:image" content="https://sinatattooer.co.uk/images/style-blackwork.webp" />
+  <meta name="twitter:image:alt" content="Blackwork tattoo by Sina Tattooer, York" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <!-- BreadcrumbList Schema [EDIT name + item] -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sinatattooer.co.uk/"},
+      {"@type": "ListItem", "position": 2, "name": "Portfolio & Styles", "item": "https://sinatattooer.co.uk/portfolio"},
+      {"@type": "ListItem", "position": 3, "name": "Blackwork Tattoos in York", "item": "https://sinatattooer.co.uk/blackwork-tattoos-york"}
+    ]
+  }
+  </script>
+
+  <!-- Service Schema [EDIT serviceType + name + description] -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Blackwork tattoo",
+    "name": "Blackwork Tattoos in York",
+    "description": "Custom blackwork tattoos by Sina Tattooer in York — bold solid black designs, illustrative blackwork, geometric and ornamental blackwork, and cover-ups.",
+    "areaServed": { "@type": "City", "name": "York" },
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Sina Tattooer",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mr Snips Barbers, 23 Yarburgh Way",
+        "addressLocality": "York",
+        "postalCode": "YO10 5HD",
+        "addressCountry": "GB"
+      },
+      "url": "https://sinatattooer.co.uk/",
+      "image": "https://sinatattooer.co.uk/images/tattoo1.webp"
+    },
+    "url": "https://sinatattooer.co.uk/blackwork-tattoos-york"
+  }
+  </script>
+
+  <!-- FAQPage Schema [EDIT mirrors visible FAQ] -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does blackwork hurt more than other tattoo styles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pain is mostly down to placement, not style. Solid black fills can feel slightly more intense than line-only work because the area is gone over more, but Sina paces sessions and uses numbing where appropriate. Most clients describe blackwork as comparable to other styles in the same area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a blackwork tattoo take to heal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Surface healing takes around 2–3 weeks, and the deeper layers settle over 2–3 months. Solid black areas may peel more visibly during the first fortnight, which is normal. Follow the aftercare guide and the design ages exceptionally well."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can blackwork be used for a cover-up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — blackwork is one of the most reliable cover-up approaches. Solid black or dense illustrative work hides previous tattoos predictably. Send a clear photo via the booking form and Sina will tell you what is realistic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a blackwork tattoo cost in York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing is £70 per hour or £400 for a full day. A non-refundable deposit secures the appointment and is deducted from the final price. Most small-to-medium blackwork pieces fit in a single session."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND862NVQ" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div data-component="nav" data-page="portfolio"></div>
+
+  <!-- ========== PAGE HEADER [EDIT h1 + sub] ========== -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Blackwork Tattoos in York</h1>
+      <p class="page-header-sub">Bold, graphic, and built to last. A gallery of custom blackwork by Sina — geometric, illustrative, ornamental, and cover-up work.</p>
+    </div>
+  </header>
+    <div data-component="breadcrumbs" data-items='[{"label":"Home","href":"/"},{"label":"Portfolio \u0026 Styles","href":"/portfolio"},{"label":"Blackwork Tattoos"}]'></div>
+
+  <main id="main">
+
+    <!-- ========== INTRO [EDIT both paragraphs] ========== -->
+    <section class="container gallery-page-intro reveal">
+      <p>
+        Blackwork is the studio's most-requested style — and one of the most rewarding. Solid black ink, confident linework and high-contrast composition give blackwork its impact, and because the design relies on depth of black rather than colour, it ages better than almost any other approach. Whether you're after an illustrative blackwork piece, geometric blackwork, an ornamental sleeve panel or a clean cover-up, every tattoo on this page was designed and applied by Sina here in York.
+      </p>
+      <p>
+        Pieces shown range from small single-session tattoos to larger custom builds across multiple sessions. If something here is close to what you have in mind, send the reference along with your booking enquiry and Sina will sketch a custom design tailored to your placement and idea.
+      </p>
+    </section>
+
+    <!-- ========== GALLERY [EDIT 8 image slots — alt text matters for SEO] ========== -->
+    <section class="container reveal-stagger" aria-label="Blackwork tattoo gallery">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/1.webp"
+            alt="Geometric blackwork forearm tattoo in York by Sina Tattooer"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 01</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/2.webp"
+            alt="Illustrative blackwork sleeve detail by Sina Tattooer, York"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 02</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/3.webp"
+            alt="Ornamental blackwork chest panel by Sina Tattooer, York"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 03</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/4.webp"
+            alt="Solid black cover-up tattoo by Sina Tattooer, York"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 04</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/5.webp"
+            alt="Blackwork mandala back piece by Sina Tattooer, York"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 05</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/6.webp"
+            alt="Blackwork dotwork shoulder tattoo in York by Sina Tattooer"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 06</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/7.webp"
+            alt="Bold blackwork lettering by Sina Tattooer, York"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 07</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery/blackwork/8.webp"
+            alt="Custom blackwork leg piece by Sina Tattooer, York"
+            width="600" height="750" loading="lazy" decoding="async"
+            onerror="this.style.display='none'" />
+          <div class="gallery-placeholder">Photo 08</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY THIS STYLE [EDIT 3 cards] ========== -->
+    <section class="container reveal" aria-labelledby="why-blackwork">
+      <h2 class="gallery-section-heading" id="why-blackwork">Why blackwork ages well</h2>
+      <div class="style-why">
+        <div class="style-why-card">
+          <h3>Built to last</h3>
+          <p>Solid black ink holds shape and contrast longer than any other pigment. A blackwork tattoo done well can look almost unchanged a decade in.</p>
+        </div>
+        <div class="style-why-card">
+          <h3>Cover-up friendly</h3>
+          <p>Dense black is the most predictable way to hide an existing tattoo. If you're considering a cover-up, blackwork is usually the shortest path to a clean result.</p>
+        </div>
+        <div class="style-why-card">
+          <h3>Style range</h3>
+          <p>From illustrative and geometric to ornamental and ignorant-style, blackwork is broad enough to build a full custom design around any concept.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ [EDIT mirror in FAQPage schema above] ========== -->
+    <section class="container reveal" aria-labelledby="gallery-faq">
+      <h2 class="gallery-section-heading" id="gallery-faq">Common questions about blackwork</h2>
+      <ul class="faq-list" role="list">
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">Does blackwork hurt more than other tattoo styles?</button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              <p>Pain is mostly down to placement, not style. Solid black fills can feel slightly more intense than line-only work because the area is gone over more, but Sina paces sessions and uses numbing where appropriate. Most clients describe blackwork as comparable to other styles in the same area.</p>
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">How long does a blackwork tattoo take to heal?</button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              <p>Surface healing takes around 2–3 weeks, and the deeper layers settle over 2–3 months. Solid black areas may peel more visibly during the first fortnight, which is normal. Follow the <a href="/tattoo-aftercare">aftercare guide</a> and the design ages exceptionally well.</p>
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can blackwork be used for a cover-up?</button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              <p>Yes — blackwork is one of the most reliable cover-up approaches. Solid black or dense illustrative work hides previous tattoos predictably. Send a clear photo via the booking form and Sina will tell you what is realistic. See the <a href="/cover-up-tattoos-york">cover-up gallery</a> for examples.</p>
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">How much does a blackwork tattoo cost in York?</button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              <p>Pricing is £70 per hour or £400 for a full day. A non-refundable deposit secures the appointment and is deducted from the final price. Most small-to-medium blackwork pieces fit in a single session.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========== CTA [EDIT copy] ========== -->
+    <section class="container reveal">
+      <div class="gallery-cta-block">
+        <h2>Ready to book your blackwork piece?</h2>
+        <p>Send your idea, references and placement photo. Sina replies within 48 hours with a quote and available dates.</p>
+        <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="btn-book">Book a Tattoo &rarr;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+
+  <div data-component="footer"></div>
+
+  <script src="components.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

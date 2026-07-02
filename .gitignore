@@ -13,3 +13,6 @@ Thumbs.db
 
 # Local-only n8n workflow exports (not deployed with site)
 n8n-workflows/
+
+# Internal SEO strategy docs (static host deploys every repo file publicly)
+seo-audit-report.md
