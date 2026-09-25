@@ -154,7 +154,24 @@
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div data-component="nav" data-page="portfolio"></div>
+  <!-- partial:nav page="portfolio" -->
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Sina Tattooer — back to home">Sina Tattooer</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navMenu" role="list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/#about" class="nav-link">About</a></li>
+        <li><a href="/portfolio" class="nav-link" aria-current="page">Portfolio</a></li>
+        <li><a href="/#booking" class="nav-link">Booking</a></li>
+        <li><a href="/#faq" class="nav-link">FAQ</a></li>
+        <li><a href="/#contact" class="nav-link">Find Us</a></li>
+        <li class="nav-mobile-cta"><a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta--mobile">Book a Tattoo</a></li>
+      </ul>
+      <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta">Book a Tattoo</a>
+    </div>
+  </nav>
+  <!-- /partial:nav -->
 
   <header class="page-header">
     <div class="container">
@@ -162,7 +179,7 @@
       <p class="page-header-sub">Painterly colour washes and fluid designs — watercolour tattoos built to last, by Sina in a private York studio.</p>
     </div>
   </header>
-  <div data-component="breadcrumbs" data-items='[{"label":"Home","href":"/"},{"label":"Portfolio & Styles","href":"/portfolio"},{"label":"Watercolour Tattoos"}]'></div>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/portfolio">Portfolio &amp; Styles</a></li><li><span aria-current="page">Watercolour Tattoos</span></li></ol></nav>
 
   <main id="main">
 
@@ -304,7 +321,53 @@
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
 
-  <div data-component="footer"></div>
+  <!-- partial:footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">Sina Tattooer</a>
+        <p class="footer-tagline">Custom tattoos in York.<br>Appointments preferred.</p>
+        <nav class="footer-social" aria-label="Social media"><a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a><a href="https://facebook.com/sinatattooer" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a><a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews">Google</a></nav>
+      </div>
+      <div class="footer-col">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/#booking">Booking</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#contact">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Styles</h3>
+        <ul>
+          <li><a href="/blackwork-tattoos-york">Blackwork</a></li>
+          <li><a href="/fineline-tattoos-york">Fine Line</a></li>
+          <li><a href="/watercolour-tattoos-york">Watercolour</a></li>
+          <li><a href="/oldschool-tattoos-york">Old School</a></li>
+          <li><a href="/geometric-tattoos-york">Geometric</a></li>
+          <li><a href="/cover-up-tattoos-york">Cover-ups</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="/tattoo-preparation">Preparation Guide</a></li>
+          <li><a href="/tattoo-aftercare">Aftercare Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Studio</h3>
+        <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
+        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2026</span> Sina Tattooer &mdash; York, UK</p>
+    </div>
+  </footer>
+  <!-- /partial:footer -->
 
   <script src="components.js"></script>
   <script src="main.js"></script>
