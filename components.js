@@ -89,7 +89,7 @@
             '<strong>Mr Snips Barbers</strong><br>' +
             '23 Yarburgh Way<br>' +
             'York, YO10 5HD<br><br>' +
-            '<a href="tel:+447724333370">07724 333370</a><br>' +
+            '<a href="tel:+447356030600">07356 030600</a><br>' +
             '<a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a>' +
           '</address>' +
           '<p class="footer-hours">Open daily, 11 am – 6 pm</p>' +

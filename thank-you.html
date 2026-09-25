@@ -13,31 +13,6 @@
     })(window, document, 'script', 'dataLayer', 'GTM-ND862NVQ');</script>
   <!-- End Google Tag Manager -->
 
-  <!-- Google Ads Conversion (fires once per session to avoid duplicate counting on refresh/back-forward) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17700708570"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17700708570');
-    try {
-      if (!sessionStorage.getItem('sina_conv_fired')) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17700708570/uIK6CO-XzZscENrBrfhB',
-          'value': 50.0,
-          'currency': 'GBP'
-        });
-        sessionStorage.setItem('sina_conv_fired', '1');
-      }
-    } catch (e) {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-17700708570/uIK6CO-XzZscENrBrfhB',
-        'value': 50.0,
-        'currency': 'GBP'
-      });
-    }
-  </script>
-
   <!-- GA4 booking enquiry event (pushed to dataLayer; GTM forwards to GA4 via a Custom Event trigger on `book_enquiry`) -->
   <script>
     (function () {
