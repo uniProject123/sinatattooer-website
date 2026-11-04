@@ -3,6 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Consent Mode v2 defaults: must stay ABOVE Google Tag Manager. The visitor's choice is sent by consent.js -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    (function () {
+      var ok = false;
+      try { var c = JSON.parse(localStorage.getItem('sina_consent')); ok = !!(c && c.v === 1 && c.analytics === true && Date.now() - c.ts < 31536000000); } catch (e) {}
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: ok ? 'granted' : 'denied', wait_for_update: 500 });
+      gtag('set', 'ads_data_redaction', true);
+    })();
+  </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -125,10 +136,6 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND862NVQ" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Skip to content (accessibility) -->
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -317,12 +324,14 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="footer-year">2026</span> Sina Tattooer &mdash; York, UK</p>
+      <p class="footer-legal"><a href="/privacy">Privacy &amp; cookies</a> &middot; <button type="button" class="footer-cookie-btn" data-cookie-settings>Cookie settings</button></p>
     </div>
   </footer>
   <!-- /partial:footer -->
 
   <script src="components.js"></script>
   <script src="main.js"></script>
+  <script src="consent.js" defer></script>
 </body>
 
 </html>

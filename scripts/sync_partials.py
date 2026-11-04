@@ -29,6 +29,7 @@ PAGES = [
     "watercolour-tattoos-york.html", "oldschool-tattoos-york.html",
     "geometric-tattoos-york.html", "cover-up-tattoos-york.html",
     "tattoo-preparation.html", "tattoo-aftercare.html",
+    "privacy.html",
 ]
 
 STYLE_LINKS = [
@@ -121,6 +122,8 @@ def build_footer() -> str:
         '    </div>\n'
         '    <div class="footer-bottom">\n'
         '      <p>&copy; <span id="footer-year">2026</span> Sina Tattooer &mdash; York, UK</p>\n'
+        '      <p class="footer-legal"><a href="/privacy">Privacy &amp; cookies</a> &middot; '
+        '<button type="button" class="footer-cookie-btn" data-cookie-settings>Cookie settings</button></p>\n'
         '    </div>\n'
         '  </footer>'
     )

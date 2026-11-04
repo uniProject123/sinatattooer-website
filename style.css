@@ -2195,3 +2195,80 @@ footer {
     background: #999;
   }
 }
+
+/* ============================================
+   COOKIE BANNER (consent.js)
+   ============================================ */
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 150;
+  max-width: 760px;
+  margin-inline: auto;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-contact-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  padding: 1rem 1.25rem;
+}
+.cookie-banner__text {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+.cookie-banner__text a { color: var(--color-accent); }
+.cookie-banner__actions { display: flex; gap: 0.75rem; flex: 0 0 auto; }
+/* Accept and Reject deliberately look the same: equal prominence. */
+.cookie-banner__btn {
+  min-height: 44px;
+  min-width: 104px;
+  padding: 0.6rem 1.25rem;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.cookie-banner__btn:hover { background: var(--color-accent); color: var(--color-bg); }
+.cookie-banner__btn:focus-visible { outline: 2px solid var(--color-accent-hover); outline-offset: 2px; }
+.has-cookie-banner .back-to-top { bottom: 9rem; }
+@media (max-width: 480px) {
+  .cookie-banner { left: 8px; right: 8px; bottom: 8px; }
+  .cookie-banner__actions { width: 100%; }
+  .cookie-banner__btn { flex: 1; }
+}
+
+.footer-legal { margin-top: 0.5rem; }
+.footer-legal a,
+.footer-cookie-btn {
+  color: var(--color-text-faint);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer-cookie-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.footer-legal a:hover,
+.footer-cookie-btn:hover { color: var(--color-accent); }
+
+@media print { .cookie-banner { display: none !important; } }

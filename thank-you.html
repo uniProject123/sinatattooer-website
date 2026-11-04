@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Consent Mode v2 defaults: must stay ABOVE Google Tag Manager. The visitor's choice is sent by consent.js -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    (function () {
+      var ok = false;
+      try { var c = JSON.parse(localStorage.getItem('sina_consent')); ok = !!(c && c.v === 1 && c.analytics === true && Date.now() - c.ts < 31536000000); } catch (e) {}
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: ok ? 'granted' : 'denied', wait_for_update: 500 });
+      gtag('set', 'ads_data_redaction', true);
+    })();
+  </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -261,10 +272,6 @@
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND862NVQ" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <div class="card">
 
@@ -308,5 +315,6 @@
     var y = document.getElementById('footer-year');
     if (y) y.textContent = new Date().getFullYear();
   </script>
+  <script src="consent.js" defer></script>
 </body>
 </html>
