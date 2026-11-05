@@ -2219,33 +2219,36 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem 1.5rem;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
 }
 .cookie-banner__text {
   flex: 1 1 320px;
   margin: 0;
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  color: var(--color-text);
 }
 .cookie-banner__text a { color: var(--color-accent); }
 .cookie-banner__actions { display: flex; gap: 0.75rem; flex: 0 0 auto; }
-/* Accept and Reject deliberately look the same: equal prominence. */
+/* Accept and Reject deliberately look the same: equal prominence.
+   Styled like the site's gold "Book a Tattoo" button. */
 .cookie-banner__btn {
   min-height: 44px;
-  min-width: 104px;
-  padding: 0.6rem 1.25rem;
-  font: inherit;
+  min-width: 120px;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-text);
-  background: transparent;
-  border: 1px solid var(--color-accent);
-  border-radius: var(--radius-md);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111;
+  background: var(--color-accent);
+  border: 0;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition);
 }
-.cookie-banner__btn:hover { background: var(--color-accent); color: var(--color-bg); }
+.cookie-banner__btn:hover { background: var(--color-accent-hover); }
 .cookie-banner__btn:focus-visible { outline: 2px solid var(--color-accent-hover); outline-offset: 2px; }
 .has-cookie-banner .back-to-top { bottom: 9rem; }
 @media (max-width: 480px) {
