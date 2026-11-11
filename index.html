@@ -118,8 +118,8 @@
   </script>
 
   <!-- Fonts: Cormorant Garamond (display) + Work Sans (body), self-hosted in /fonts -->
-  <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
+  <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
 
   <!-- Widgets load lazily and sit below the fold, so a DNS hint is enough -->
   <link rel="dns-prefetch" href="https://w.behold.so">
@@ -212,7 +212,7 @@
         <div class="about-portrait">
           <img src="images/sina-portrait.webp" srcset="images/sina-portrait-512.webp 512w, images/sina-portrait.webp 1024w"
             sizes="(max-width: 600px) 90vw, 380px" alt="Sina — tattoo artist based in York" width="500" height="500"
-            loading="lazy" decoding="async" />
+            loading="lazy" decoding="async" fetchpriority="low" />
         </div>
         <div class="about-text">
           <h2>About Me</h2>
