@@ -39,7 +39,12 @@
   }
 
   /* ── Scroll Reveal ── */
-  var revealTargets = document.querySelectorAll('.about-portrait, .about-text, .reveal, .reveal-stagger');
+  /* Groups whose children animate in one after another (styled in style.css) */
+  document.querySelectorAll('.process-steps, .pricing-highlight, .faq-list').forEach(function (el) {
+    el.classList.add('stagger-group');
+  });
+
+  var revealTargets = document.querySelectorAll('.about-portrait, .about-text, .reveal, .reveal-stagger, .stagger-group');
   if (revealTargets.length) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
