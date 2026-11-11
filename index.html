@@ -30,7 +30,8 @@
     content="Custom tattoos in York by Sina Tattooer: blackwork, fine line, watercolour, old school and geometric, designed one-to-one in a private studio. Send an enquiry." />
   <meta name="author" content="Sina Tattooer" />
   <meta name="theme-color" content="#0e0d0c" />
-  <link rel="preload" as="image" href="images/tattoo1.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/tattoo1-640.webp" media="(max-width: 640px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/tattoo1.webp" media="(min-width: 641px)" fetchpriority="high" />
   <link rel="canonical" href="https://sinatattooer.co.uk/" />
 
   <!-- Favicon -->
@@ -41,7 +42,7 @@
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:title"
-    content="Custom Tattoos in York — Private Studio | Sina Tattooer" />
+    content="Custom Tattoos in York — Private Tattoo Studio | Sina Tattooer" />
   <meta property="og:description"
     content="Custom tattoos in York by Sina Tattooer: blackwork, fine line, watercolour, old school and geometric, designed one-to-one in a private studio. Send an enquiry." />
   <meta property="og:url" content="https://sinatattooer.co.uk/" />
@@ -56,19 +57,19 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title"
-    content="Custom Tattoos in York — Private Studio | Sina Tattooer" />
+    content="Custom Tattoos in York — Private Tattoo Studio | Sina Tattooer" />
   <meta name="twitter:description"
     content="Custom tattoos in York by Sina Tattooer: blackwork, fine line, watercolour, old school and geometric, designed one-to-one in a private studio. Send an enquiry." />
   <meta name="twitter:image" content="https://sinatattooer.co.uk/images/tattoo1.webp" />
   <meta name="twitter:image:alt" content="Custom blackwork tattoo by Sina Tattooer, York" />
 
-  <title>Custom Tattoos in York — Private Studio | Sina Tattooer</title>
+  <title>Custom Tattoos in York — Private Tattoo Studio | Sina Tattooer</title>
 
   <!-- LocalBusiness Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
+    "@type": "TattooParlor",
     "name": "Sina Tattooer",
     "description": "Custom blackwork, fine line, watercolour and geometric tattoos in York. Private studio with 9 years experience. Appointments preferred.",
     "url": "https://sinatattooer.co.uk",
@@ -116,16 +117,13 @@
   }
   </script>
 
-  <!-- Fonts: Cormorant Garamond (display) + Work Sans (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts: Cormorant Garamond (display) + Work Sans (body), self-hosted in /fonts -->
+  <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Preconnect to lazy-loaded widget origins -->
-  <link rel="preconnect" href="https://w.behold.so" crossorigin>
-  <link rel="preconnect" href="https://embedsocial.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300..700&display=swap"
-    rel="stylesheet">
+  <!-- Widgets load lazily and sit below the fold, so a DNS hint is enough -->
+  <link rel="dns-prefetch" href="https://w.behold.so">
+  <link rel="dns-prefetch" href="https://embedsocial.com">
 
   <!-- Behold Instagram Feed Widget (Lazy-loaded) -->
   <script>
@@ -164,7 +162,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111a" />
+  <link rel="stylesheet" href="style.css?v=20261111b" />
 </head>
 
 <body id="top">
@@ -194,8 +192,11 @@
 
   <header class="hero">
     <div class="hero-overlay">
-      <img src="images/tattoo1.webp" alt="Custom blackwork tattoo by Sina Tattooer, York" class="hero-bg" width="1200"
-        height="700" loading="eager" decoding="async" fetchpriority="high" />
+      <picture>
+        <source media="(max-width: 640px)" srcset="images/tattoo1-640.webp" width="640" height="853" />
+        <img src="images/tattoo1.webp" alt="Custom blackwork tattoo by Sina Tattooer, York" class="hero-bg" width="900"
+          height="1200" loading="eager" decoding="async" fetchpriority="high" />
+      </picture>
       <div class="hero-content">
         <h1>York Tattoo Artist &mdash; Bespoke Blackwork and Custom Tattoos</h1>
         <p class="hero-tagline">Private custom tattoo studio in York.<br>One-on-one consultations, bespoke designs.</p>
@@ -209,7 +210,8 @@
     <section class="about" id="about">
       <div class="about-inner container">
         <div class="about-portrait">
-          <img src="images/sina-portrait.webp" alt="Sina — tattoo artist based in York" width="500" height="500"
+          <img src="images/sina-portrait.webp" srcset="images/sina-portrait-512.webp 512w, images/sina-portrait.webp 1024w"
+            sizes="(max-width: 600px) 90vw, 380px" alt="Sina — tattoo artist based in York" width="500" height="500"
             loading="lazy" decoding="async" />
         </div>
         <div class="about-text">
@@ -560,7 +562,7 @@
   </footer>
   <!-- /partial:footer -->
 
-  <script src="components.js"></script>
+  <script src="components.js?v=20261111a"></script>
   <script src="main.js?v=20261111a"></script>
 
   <!-- FAQPage Schema -->
@@ -603,6 +605,14 @@
       },
       {
         "@type": "Question",
+        "name": "How do I prepare for my tattoo session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To get the best results and most comfortable experience: eat a good meal before your appointment, as low blood sugar can make you feel lightheaded. Stay hydrated in the days leading up to your session. Avoid alcohol for at least 24 hours before your appointment, as it thins the blood. Wear comfortable clothing that allows easy access to the tattoo area. Avoid sunburn, as tattooing sunburnt or irritated skin is not possible."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "How do I care for my new tattoo?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -615,6 +625,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Please give as much notice as possible (ideally 48+ hours). Your deposit can be transferred to a new date. Late cancellations or no-shows may result in the loss of your deposit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to bring reference images?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reference images are incredibly helpful but not essential. They give Sina a clear idea of the style, mood and elements you're drawn to. You can include them in the booking form or send them via email. Even if you only have a rough idea, Sina will work with you to develop the concept into a finished design you'll love."
         }
       }
     ]
