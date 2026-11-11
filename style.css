@@ -1098,6 +1098,79 @@ footer {
 .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
 .reveal-stagger.is-visible > *:nth-child(n+7) { transition-delay: 0.48s; }
 
+/* --- Motion: load entrances, staggered groups, scroll progress ---
+   All of it is opt-in for visitors who have not asked for reduced motion.
+   Animations use `backwards` fill only, so once they finish the element
+   returns to its normal styles and hover transforms keep working. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(18px); }
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.6); }
+  }
+
+  /* Hero and page-header text rises in on load */
+  .hero-content > *,
+  .page-header .container > * {
+    animation: riseIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  .hero-content > :nth-child(1),
+  .page-header .container > :nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > :nth-child(2),
+  .page-header .container > :nth-child(2) { animation-delay: 0.25s; }
+  .hero-content > :nth-child(n+3),
+  .page-header .container > :nth-child(n+3) { animation-delay: 0.4s; }
+
+  /* Staggered groups. main.js adds .stagger-group, so without JS (or with a
+     stale cached main.js) the children are simply visible. */
+  .stagger-group > * { --stagger: 0s; }
+  .stagger-group > :nth-child(2) { --stagger: 0.07s; }
+  .stagger-group > :nth-child(3) { --stagger: 0.14s; }
+  .stagger-group > :nth-child(4) { --stagger: 0.21s; }
+  .stagger-group > :nth-child(5) { --stagger: 0.28s; }
+  .stagger-group > :nth-child(6) { --stagger: 0.35s; }
+  .stagger-group > :nth-child(7) { --stagger: 0.42s; }
+  .stagger-group > :nth-child(n+8) { --stagger: 0.49s; }
+
+  .stagger-group:not(.is-visible) > * { opacity: 0; }
+
+  .stagger-group.is-visible > * {
+    animation: riseIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: var(--stagger);
+  }
+
+  .stagger-group.is-visible .process-number {
+    animation: popIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(var(--stagger) + 0.2s);
+  }
+
+  /* Reading progress: thin accent line along the bottom of the nav.
+     CSS scroll-driven, so browsers without support just don't show it. */
+  @supports (animation-timeline: scroll()) {
+    @keyframes scrollProgress {
+      to { transform: scaleX(1); }
+    }
+
+    .site-nav::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 0;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      pointer-events: none;
+      animation: scrollProgress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
 /* --- Page Header (Sub-pages) --- */
 .page-header {
   margin-top: var(--nav-height);
