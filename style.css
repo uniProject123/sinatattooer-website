@@ -458,6 +458,20 @@ a:hover { color: var(--color-accent-hover); }
   margin-top: var(--space-8);
 }
 
+/* Gift vouchers */
+.vouchers-terms {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.vouchers-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.vouchers-actions > a { margin: 0; }
+
 /* Google rating under booking CTAs */
 .rating-line {
   margin: var(--space-3) 0 0;

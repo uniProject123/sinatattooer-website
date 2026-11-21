@@ -96,6 +96,7 @@ def build_footer() -> str:
         '          <li><a href="/">Home</a></li>\n'
         '          <li><a href="/portfolio">Portfolio</a></li>\n'
         '          <li><a href="/#booking">Booking</a></li>\n'
+        '          <li><a href="/#vouchers">Gift Vouchers</a></li>\n'
         '          <li><a href="/#faq">FAQ</a></li>\n'
         '          <li><a href="/#contact">Find Us</a></li>\n'
         '        </ul>\n'
