@@ -124,9 +124,9 @@
   <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
   <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
 
-  <!-- Widgets load lazily and sit below the fold, so a DNS hint is enough -->
+  <!-- Behold loads lazily below the fold, so a DNS hint is enough. Google Maps and EmbedSocial
+       only load when the visitor clicks (they set third-party cookies), see main.js -->
   <link rel="dns-prefetch" href="https://w.behold.so">
-  <link rel="dns-prefetch" href="https://embedsocial.com">
 
   <!-- Behold Instagram Feed Widget (Lazy-loaded) -->
   <script>
@@ -145,27 +145,9 @@
     })();
   </script>
 
-  <!-- EmbedSocial Google Reviews Widget (Lazy-loaded) -->
-  <script>
-    (() => {
-      const loadEmbedSocial = () => {
-        const d = document, s = "script", id = "EmbedSocialHashtagScript";
-        if (d.getElementById(id)) { return; }
-        const js = d.createElement(s);
-        js.id = id;
-        js.src = "https://embedsocial.com/cdn/ht.js";
-        d.getElementsByTagName("head")[0].appendChild(js);
-      };
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadEmbedSocial, { timeout: 3000 });
-      } else {
-        setTimeout(loadEmbedSocial, 2000);
-      }
-    })();
-  </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261121b" />
+  <link rel="stylesheet" href="style.css?v=20261121c" />
 </head>
 
 <body id="top">
@@ -338,6 +320,9 @@
       <p class="booking-cta-note">Ready to get started? It only takes 2 minutes to send your enquiry.</p>
       <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="btn-book btn-book--dark">Book
         a Tattoo &rarr;</a>
+      <p class="booking-alt">Rather message? <a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer"
+          data-cta="booking-whatsapp">WhatsApp Sina</a> or call <a href="tel:+447356030600"
+          data-cta="booking-phone">07356 030600</a>.</p>
       <p class="rating-line"><a href="https://maps.google.com/?cid=9494495319318612564" target="_blank"
           rel="noopener noreferrer"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 from 50+ Google reviews</a></p>
     </section>
@@ -488,7 +473,8 @@
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
               <p>Appointments are preferred, but walk-ins are possible when there's a free slot. Call or message first
-                to check walk-in availability: <a href="tel:+447356030600">07356 030600</a>.</p>
+                to check walk-in availability: <a href="tel:+447356030600">07356 030600</a> or
+                <a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer" data-cta="faq-whatsapp">WhatsApp</a>.</p>
             </div>
           </div>
         </div>
@@ -552,7 +538,15 @@
         <p class="reviews-sub">Live from <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank"
             rel="noopener noreferrer">Google Reviews</a></p>
       </div>
-      <div class="reviews-widget-wrapper skeleton-wrap">
+      <div class="reviews-widget-wrapper reviews-widget-wrapper--gated">
+        <div class="embed-gate">
+          <p class="embed-gate-title"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 from 50+ Google reviews</p>
+          <div class="embed-gate-actions">
+            <button type="button" class="btn-instagram" data-embed-load="reviews">Show reviews</button>
+            <a href="https://maps.google.com/?cid=9494495319318612564" target="_blank" rel="noopener noreferrer">Read them on Google</a>
+          </div>
+          <p class="embed-gate-note">Reviews load from EmbedSocial, which may set its own cookies.</p>
+        </div>
         <div class="embedsocial-hashtag" data-ref="88aab0bce4aebfb8c0a45e082e4282576ff6c642" data-lazyload="yes">
           <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding"
             href="https://embedsocial.com/google-reviews-widget/" target="_blank" title="Embed Google reviews">
@@ -584,7 +578,8 @@
           </p>
           <p class="contact-hours"><strong>Hours:</strong> 11am &ndash; 6pm daily. Appointments are preferred; call or
             message first to check walk-in availability.</p>
-          <p class="contact-phone">Phone: <a href="tel:+447356030600">07356 030600</a></p>
+          <p class="contact-phone">Phone: <a href="tel:+447356030600" data-cta="contact-phone">07356 030600</a></p>
+          <p class="contact-phone">WhatsApp: <a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer" data-cta="contact-whatsapp">Message on WhatsApp</a></p>
           <p class="contact-email">Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
           <nav class="socials" aria-label="Social media links">
             <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer"
@@ -596,12 +591,15 @@
               Reviews</a>
           </nav>
         </div>
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk"
-            width="600" height="340" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Sina Tattooer location on Google Maps"
-            aria-label="Interactive Google Map showing Sina Tattooer studio location at Mr Snips Barbers, York"></iframe>
+        <div class="contact-map" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk">
+          <div class="embed-gate">
+            <p class="embed-gate-title">Mr Snips Barbers, 23 Yarburgh Way, York YO10 5HD</p>
+            <div class="embed-gate-actions">
+              <button type="button" class="btn-instagram" data-embed-load="map">Show map</button>
+              <a href="https://maps.google.com/?cid=9494495319318612564" target="_blank" rel="noopener noreferrer" data-cta="contact-directions">Directions in Google Maps</a>
+            </div>
+            <p class="embed-gate-note">The map loads from Google, which may set its own cookies.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -649,7 +647,7 @@
       </div>
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
-        <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
+        <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer">WhatsApp</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
         <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
         <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
@@ -662,7 +660,7 @@
   <!-- /partial:footer -->
 
   <script src="components.js?v=20261111a"></script>
-  <script src="main.js?v=20261121a"></script>
+  <script src="main.js?v=20261121b"></script>
 
   <!-- FAQPage Schema -->
   <script type="application/ld+json">
@@ -731,7 +729,7 @@
         "name": "Do you take walk-ins?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Appointments are preferred, but walk-ins are possible when there's a free slot. Call or message first to check walk-in availability: 07356 030600."
+          "text": "Appointments are preferred, but walk-ins are possible when there's a free slot. Call or message first to check walk-in availability: 07356 030600 or WhatsApp."
         }
       },
       {

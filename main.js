@@ -144,6 +144,45 @@
     });
   });
 
+  /* ── Click-to-load embeds ──
+     Google Maps and EmbedSocial set third-party cookies (EmbedSocial pulls in
+     YouTube's), so they only load when the visitor asks for them. */
+  var embedLoaders = {
+    map: function (gate) {
+      var box = gate.closest('[data-map-src]');
+      var f = document.createElement('iframe');
+      f.src = box.getAttribute('data-map-src');
+      f.width = '600';
+      f.height = '340';
+      f.style.border = '0';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      f.title = 'Sina Tattooer location on Google Maps';
+      box.replaceChildren(f);
+    },
+    reviews: function (gate) {
+      var wrap = gate.parentNode;
+      wrap.classList.remove('reviews-widget-wrapper--gated');
+      gate.remove();
+      if (document.getElementById('EmbedSocialHashtagScript')) return;
+      var js = document.createElement('script');
+      js.id = 'EmbedSocialHashtagScript';
+      js.src = 'https://embedsocial.com/cdn/ht.js';
+      document.head.appendChild(js);
+    }
+  };
+
+  document.querySelectorAll('[data-embed-load]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var kind = btn.getAttribute('data-embed-load');
+      var load = embedLoaders[kind];
+      if (!load) return;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'embed_load', embed_type: kind });
+      load(btn.closest('.embed-gate'));
+    });
+  });
+
   /* ── Footer year ── */
   var yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
