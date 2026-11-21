@@ -131,6 +131,19 @@
     });
   });
 
+  /* Other tracked CTAs (e.g. gift vouchers): <a data-cta="voucher-email"> */
+  document.querySelectorAll('a[data-cta]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'cta_click',
+        cta_label: a.textContent.trim().replace(/\s+/g, ' '),
+        cta_location: a.getAttribute('data-cta'),
+        cta_destination: a.href
+      });
+    });
+  });
+
   /* ── Footer year ── */
   var yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
