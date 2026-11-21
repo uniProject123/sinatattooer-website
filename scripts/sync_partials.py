@@ -118,6 +118,7 @@ def build_footer() -> str:
         '        <h3>Studio</h3>\n'
         '        <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br>'
         '<a href="tel:+447356030600">07356 030600</a><br>'
+        '<a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer">WhatsApp</a><br>'
         '<a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>\n'
         '        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; '
         'call or message first to check walk-in availability.</p>\n'
