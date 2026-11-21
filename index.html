@@ -16,6 +16,7 @@
   </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
+      if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // no analytics from local testing
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -103,6 +104,7 @@
       "closes": "18:00"
     }],
     "priceRange": "££",
+    "paymentAccepted": "Cash, Bank transfer",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Tattoo Styles",
@@ -111,7 +113,8 @@
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fine Line Tattoos York"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Watercolour Tattoos York"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Old School Traditional Tattoos York"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Geometric Tattoos York"}}
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Geometric Tattoos York"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cover-Up Tattoos York"}}
       ]
     }
   }
@@ -162,7 +165,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111b" />
+  <link rel="stylesheet" href="style.css?v=20261121a" />
 </head>
 
 <body id="top">
@@ -202,6 +205,8 @@
         <p class="hero-tagline">Private custom tattoo studio in York.<br>One-on-one consultations, bespoke designs.</p>
         <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="btn-book">Book a Tattoo
           &rarr;</a>
+        <p class="rating-line"><a href="https://maps.google.com/?cid=9494495319318612564" target="_blank"
+            rel="noopener noreferrer"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 from 50+ Google reviews</a></p>
       </div>
     </div>
   </header>
@@ -221,7 +226,8 @@
             tattoo designs that are as unique as each client.</p>
           <hr class="about-divider" />
           <p>Based inside <strong>Mr Snips Barbers</strong> in the Badger Hill area of York, the private studio setting
-            ensures a relaxed, one-on-one experience from first consultation through to aftercare.</p>
+            ensures a relaxed, one-on-one experience from first consultation through to aftercare. The studio is
+            registered with City of York Council for tattooing.</p>
           <p>Whether it's solid <a href="/blackwork-tattoos-york">blackwork</a> or
             <a href="/fineline-tattoos-york">fine line tattoos</a>, every design is drawn around your placement and
             how the piece will age on your skin.</p>
@@ -300,6 +306,12 @@
           <p class="pricing-label">Full Day Session</p>
           <p class="pricing-value">&pound;400 <span>/ day</span></p>
         </div>
+        <div class="pricing-item">
+          <p class="pricing-label">Minimum Charge</p>
+          <p class="pricing-value">&pound;70</p>
+        </div>
+        <p class="pricing-note">Deposit: usually a third to a half of your quote, paid by bank transfer. The rest is
+          paid on the day by bank transfer or cash.</p>
       </div>
 
       <div class="booking-steps">
@@ -317,12 +329,15 @@
       <ul role="list">
         <li>Include your idea, placement, size, and any reference images in the form</li>
         <li>Please arrive with clean, healed skin &mdash; no sunburn or active irritation</li>
+        <li>You must be 18 or over, and bring valid photo ID (passport or driving licence)</li>
         <li><a href="/tattoo-preparation">How to prepare for your tattoo appointment &rarr;</a></li>
         <li><a href="/tattoo-aftercare">Read the full aftercare guide &rarr;</a></li>
       </ul>
       <p class="booking-cta-note">Ready to get started? It only takes 2 minutes to send your enquiry.</p>
       <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="btn-book btn-book--dark">Book
         a Tattoo &rarr;</a>
+      <p class="rating-line"><a href="https://maps.google.com/?cid=9494495319318612564" target="_blank"
+          rel="noopener noreferrer"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 from 50+ Google reviews</a></p>
     </section>
 
     <hr class="section-divider" aria-hidden="true" />
@@ -368,6 +383,8 @@
                 areas (outer arm, thigh, calf) are generally more comfortable.</p>
               <p>Most clients describe the sensation as a scratching or vibrating feeling rather than sharp pain. Sina
                 works at a comfortable pace and is happy to take breaks whenever needed.</p>
+              <p>Numbing cream isn't needed for most placements, but it's fine for very sensitive areas or large
+                blackout work. Mention it when you enquire.</p>
             </div>
           </div>
         </div>
@@ -376,10 +393,12 @@
           <button class="faq-question" aria-expanded="false">Can you cover up an old tattoo?</button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              <p>Yes! Sina has extensive experience with cover-ups and reworks. The best approach depends on the
-                existing tattoo's size, colour and placement. Send a clear photo of the current tattoo in your booking
-                form and Sina will advise on what's possible.</p>
-              <p>Options will be discussed during your consultation.</p>
+              <p>Yes! Sina has extensive experience with cover-ups and reworks, using blackwork, Japanese or
+                traditional approaches depending on the piece. The best approach depends on the existing tattoo's
+                size, colour and placement. Send a clear photo of the current tattoo in your booking form and Sina
+                will advise on what's possible.</p>
+              <p>Options will be discussed during your consultation. <a href="/cover-up-tattoos-york">More about
+                cover-ups &rarr;</a></p>
             </div>
           </div>
         </div>
@@ -411,8 +430,7 @@
                 fresh tattoo. Keep it on for up to 72 hours, then gently remove in a warm shower. After removal,
                 wash with lukewarm water and fragrance-free antibacterial soap, pat dry with a clean paper towel.</p>
               <p>You'll also be recommended a <strong>specialist aftercare cream</strong> available at the studio for a
-                small
-                cost. Apply a thin layer 2&ndash;3 times daily for the first 2 weeks. Avoid baths, swimming, direct
+                small cost. Apply a thin layer 2&ndash;3 times daily for the first 2 weeks. Avoid baths, swimming, direct
                 sunlight and tight clothing during healing.</p>
               <p>Your tattoo will peel and may feel itchy &mdash; <strong>do not pick or scratch.</strong> Once fully
                 healed (4&ndash;6 weeks), always apply SPF 30+ sunscreen to protect your tattoo from fading.</p>
@@ -429,6 +447,40 @@
                 transferred to a new date.</p>
               <p>Late cancellations or no-shows will result in the loss of your deposit, as the time slot has been
                 reserved exclusively for you and custom design work may have already begun.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do you take walk-ins?</button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              <p>Appointments are preferred, but walk-ins are possible when there's a free slot. Call or message first
+                to check walk-in availability: <a href="tel:+447356030600">07356 030600</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">How do I pay?</button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              <p>The deposit is usually a third to a half of your quote. It's paid by bank transfer, using the payment
+                link in your booking confirmation email. The rest is paid on the day by bank transfer or cash. Card
+                payments aren't accepted.</p>
+              <p>The payment link only arrives in your booking confirmation email, after you've chosen a date. If anyone
+                else asks you for a deposit in Sina's name, check with Sina first on
+                <a href="tel:+447356030600">07356 030600</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do I need ID?</button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              <p>Yes. By UK law you must be 18 or over to get a tattoo, so please bring valid photo ID (passport or
+                driving licence) to your appointment.</p>
             </div>
           </div>
         </div>
@@ -486,7 +538,8 @@
             23 Yarburgh Way<br />
             York, YO10 5HD
           </p>
-          <p class="contact-hours"><strong>Open:</strong> Every day, 11am &ndash; 6pm</p>
+          <p class="contact-hours"><strong>Hours:</strong> 11am &ndash; 6pm daily. Appointments are preferred; call or
+            message first to check walk-in availability.</p>
           <p class="contact-phone">Phone: <a href="tel:+447356030600">07356 030600</a></p>
           <p class="contact-email">Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
           <nav class="socials" aria-label="Social media links">
@@ -552,7 +605,8 @@
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
         <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
+        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -576,7 +630,7 @@
         "name": "How much does a tattoo cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sina charges £70 per hour or £400 for a full day session. The total cost depends on the size, detail and placement of your tattoo. A personalised quote will be provided after reviewing your enquiry. A non-refundable deposit is required to secure your appointment."
+          "text": "Sina charges £70 per hour or £400 for a full day session. The total cost depends on the size, detail and placement of your tattoo. A personalised quote will be provided after reviewing your enquiry. A non-refundable deposit is required to secure your appointment. This deposit is deducted from the final price on the day of your session."
         }
       },
       {
@@ -584,7 +638,7 @@
         "name": "What should I expect at my first appointment?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "On the day, Sina will walk you through the design, discuss placement and sizing, and apply a stencil so you can see exactly how it will look before any ink touches skin. The studio is private and relaxed. Please arrive well-rested, hydrated, and having eaten a proper meal."
+          "text": "On the day, Sina will walk you through the design, discuss placement and sizing, and apply a stencil so you can see exactly how it will look before any ink touches skin. The studio is private and relaxed and you can have as many breaks as you need. Please arrive well-rested, hydrated, and having eaten a proper meal. Avoid alcohol for at least 24 hours beforehand."
         }
       },
       {
@@ -592,7 +646,7 @@
         "name": "Does getting a tattoo hurt?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pain levels vary depending on the placement, your personal tolerance, and the size of the piece. Most clients describe the sensation as a scratching or vibrating feeling rather than sharp pain. Sina works at a comfortable pace and is happy to take breaks whenever needed."
+          "text": "Pain levels vary depending on the placement, your personal tolerance, and the size of the piece. Areas with thinner skin or closer to bone (ribs, spine, inner arm) tend to be more sensitive, while fleshier areas (outer arm, thigh, calf) are generally more comfortable. Most clients describe the sensation as a scratching or vibrating feeling rather than sharp pain. Sina works at a comfortable pace and is happy to take breaks whenever needed. Numbing cream isn't needed for most placements, but it's fine for very sensitive areas or large blackout work. Mention it when you enquire."
         }
       },
       {
@@ -600,7 +654,7 @@
         "name": "Can you cover up an old tattoo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Sina has extensive experience with cover-ups and reworks. Blackwork and geometric styles are particularly effective for cover-ups. Send a clear photo of the current tattoo in your booking form and Sina will advise on what's possible."
+          "text": "Yes! Sina has extensive experience with cover-ups and reworks, using blackwork, Japanese or traditional approaches depending on the piece. The best approach depends on the existing tattoo's size, colour and placement. Send a clear photo of the current tattoo in your booking form and Sina will advise on what's possible. Options will be discussed during your consultation."
         }
       },
       {
@@ -608,7 +662,7 @@
         "name": "How do I prepare for my tattoo session?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "To get the best results and most comfortable experience: eat a good meal before your appointment, as low blood sugar can make you feel lightheaded. Stay hydrated in the days leading up to your session. Avoid alcohol for at least 24 hours before your appointment, as it thins the blood. Wear comfortable clothing that allows easy access to the tattoo area. Avoid sunburn, as tattooing sunburnt or irritated skin is not possible."
+          "text": "Eat a good meal before your appointment — low blood sugar can make you feel lightheaded. Stay hydrated in the days leading up to your session. Avoid alcohol for at least 24 hours before your appointment — it thins the blood. Wear comfortable clothing that allows easy access to the tattoo area. Avoid sunburn — tattooing sunburnt or irritated skin is not possible."
         }
       },
       {
@@ -616,7 +670,7 @@
         "name": "How do I care for my new tattoo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sina uses second skin (a medical-grade transparent adhesive film) to protect your fresh tattoo. Keep it on for 24-72 hours, then gently remove in a warm shower. You'll also receive a specialist aftercare cream from the studio. Apply a thin layer 2-3 times daily for the first 2 weeks. Do not pick or scratch peeling skin. Once healed, always apply SPF 30+ sunscreen when exposed to sunlight."
+          "text": "Sina uses second skin (a medical-grade transparent adhesive film) to protect your fresh tattoo. Keep it on for up to 72 hours, then gently remove in a warm shower. After removal, wash with lukewarm water and fragrance-free antibacterial soap, pat dry with a clean paper towel. You'll also be recommended a specialist aftercare cream available at the studio for a small cost. Apply a thin layer 2–3 times daily for the first 2 weeks. Avoid baths, swimming, direct sunlight and tight clothing during healing. Your tattoo will peel and may feel itchy — do not pick or scratch. Once fully healed (4–6 weeks), always apply SPF 30+ sunscreen to protect your tattoo from fading."
         }
       },
       {
@@ -624,7 +678,31 @@
         "name": "What if I need to reschedule or cancel?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Please give as much notice as possible (ideally 48+ hours). Your deposit can be transferred to a new date. Late cancellations or no-shows may result in the loss of your deposit."
+          "text": "Life happens — if you need to reschedule, please give at least 48 hours. Your deposit can be transferred to a new date. Late cancellations or no-shows will result in the loss of your deposit, as the time slot has been reserved exclusively for you and custom design work may have already begun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you take walk-ins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Appointments are preferred, but walk-ins are possible when there's a free slot. Call or message first to check walk-in availability: 07356 030600."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I pay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The deposit is usually a third to a half of your quote. It's paid by bank transfer, using the payment link in your booking confirmation email. The rest is paid on the day by bank transfer or cash. Card payments aren't accepted. The payment link only arrives in your booking confirmation email, after you've chosen a date. If anyone else asks you for a deposit in Sina's name, check with Sina first on 07356 030600."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need ID?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. By UK law you must be 18 or over to get a tattoo, so please bring valid photo ID (passport or driving licence) to your appointment."
         }
       },
       {

@@ -38,6 +38,7 @@
   </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
+      if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // no analytics from local testing
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -141,7 +142,7 @@
         "name": "Does blackwork hurt more than other tattoo styles?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pain is mostly down to placement, not style. Solid black fills can feel slightly more intense than line-only work because the area is gone over more, but Sina paces sessions and uses numbing where appropriate. Most clients describe blackwork as comparable to other styles in the same area."
+          "text": "Pain is mostly down to placement, not style. Solid black fills can feel slightly more intense than line-only work because the area is gone over more, but Sina paces sessions and you can take breaks whenever you need. Most clients describe blackwork as comparable to other styles in the same area. Numbing cream isn't needed for most placements, but it's fine for very sensitive areas or large blackout work. Mention it when you enquire."
         }
       },
       {
@@ -157,7 +158,7 @@
         "name": "Can blackwork be used for a cover-up?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — blackwork is one of the most reliable cover-up approaches. Solid black or dense illustrative work hides previous tattoos predictably. Send a clear photo via the booking form and Sina will tell you what is realistic."
+          "text": "Yes — blackwork is one of the most reliable cover-up approaches. Solid black or dense illustrative work hides previous tattoos predictably. Send a clear photo via the booking form and Sina will tell you what is realistic. Read more about cover-up tattoos."
         }
       },
       {
@@ -173,7 +174,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111b" />
+  <link rel="stylesheet" href="style.css?v=20261121a" />
 </head>
 
 <body>
@@ -316,7 +317,7 @@
           <button class="faq-question" aria-expanded="false">Does blackwork hurt more than other tattoo styles?</button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              <p>Pain is mostly down to placement, not style. Solid black fills can feel slightly more intense than line-only work because the area is gone over more, but Sina paces sessions and uses numbing where appropriate. Most clients describe blackwork as comparable to other styles in the same area.</p>
+              <p>Pain is mostly down to placement, not style. Solid black fills can feel slightly more intense than line-only work because the area is gone over more, but Sina paces sessions and you can take breaks whenever you need. Most clients describe blackwork as comparable to other styles in the same area. Numbing cream isn't needed for most placements, but it's fine for very sensitive areas or large blackout work. Mention it when you enquire.</p>
             </div>
           </div>
         </li>
@@ -332,7 +333,7 @@
           <button class="faq-question" aria-expanded="false">Can blackwork be used for a cover-up?</button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              <p>Yes — blackwork is one of the most reliable cover-up approaches. Solid black or dense illustrative work hides previous tattoos predictably. Send a clear photo via the booking form and Sina will tell you what is realistic. See the <a href="/cover-up-tattoos-york">cover-up gallery</a> for examples.</p>
+              <p>Yes — blackwork is one of the most reliable cover-up approaches. Solid black or dense illustrative work hides previous tattoos predictably. Send a clear photo via the booking form and Sina will tell you what is realistic. Read more about <a href="/cover-up-tattoos-york">cover-up tattoos</a>.</p>
             </div>
           </div>
         </li>
@@ -400,7 +401,8 @@
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
         <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
+        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">
