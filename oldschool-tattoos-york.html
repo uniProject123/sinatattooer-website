@@ -20,6 +20,7 @@
   </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
+      if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // no analytics from local testing
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -119,7 +120,7 @@
         "name": "What makes a tattoo 'old school' or traditional?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Old school (American traditional) tattoos are defined by bold black outlines, a limited colour palette of solid primary colours, and iconic imagery — roses, anchors, swallows, eagles, daggers, pin-ups. The aesthetic comes from early 20th-century Western tattooing and is one of the most enduring styles in the craft."
+          "text": "Old school (American traditional) tattoos are defined by bold black outlines, a limited palette of solid primary colours, and iconic imagery — roses, anchors, swallows, eagles, daggers, pin-ups. The aesthetic comes from early 20th-century Western tattooing and is one of the most enduring styles in the craft."
         }
       },
       {
@@ -135,7 +136,7 @@
         "name": "Can I get a custom old school design rather than standard flash?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. Sina works in the traditional style but all designs are custom — you can bring your own subject matter or imagery and have it interpreted in an old school aesthetic. Send your ideas and references via the booking form."
+          "text": "Absolutely. All designs Sina produces are custom — you can bring your own subject matter and have it interpreted in the traditional aesthetic. Send your ideas and references via the booking form."
         }
       },
       {
@@ -143,7 +144,7 @@
         "name": "How much does an old school tattoo cost in York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pricing is £70 per hour or £400 for a full day session. Most small traditional flash pieces are single-session. Larger custom traditional work may require multiple sessions. A deposit is required to confirm your booking."
+          "text": "Pricing is £70 per hour or £400 for a full day session. Most small traditional pieces fit in a single session. A deposit is required to confirm your booking and is deducted from the final price."
         }
       }
     ]
@@ -151,7 +152,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111b" />
+  <link rel="stylesheet" href="style.css?v=20261121a" />
 </head>
 
 <body>
@@ -371,7 +372,8 @@
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
         <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
+        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">

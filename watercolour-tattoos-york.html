@@ -20,6 +20,7 @@
   </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
+      if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // no analytics from local testing
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -119,7 +120,7 @@
         "name": "Do watercolour tattoos fade faster than other styles?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Watercolour tattoos without a strong black outline do fade more than bold-line work over time. Sina addresses this by anchoring colour washes in solid linework where it suits the design, which significantly improves longevity. Sun protection on healed tattoos makes a real difference."
+          "text": "Watercolour tattoos without a strong black outline do fade more than bold-line work over time. Sina addresses this by anchoring colour washes in solid linework where it suits the design, which significantly improves longevity. Sun protection on healed tattoos makes a real difference — always use SPF 30+ on exposed tattoos."
         }
       },
       {
@@ -127,7 +128,7 @@
         "name": "Can you do watercolour without a black outline?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, though unlined watercolour requires careful placement and design planning to hold well. Sina will discuss the trade-offs during your consultation and advise on the best approach for your specific concept."
+          "text": "Yes, though unlined watercolour requires careful placement and design planning to hold well. Sina will discuss the trade-offs during your consultation and advise on the best approach for your specific concept and placement."
         }
       },
       {
@@ -151,7 +152,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111b" />
+  <link rel="stylesheet" href="style.css?v=20261121a" />
 </head>
 
 <body>
@@ -371,7 +372,8 @@
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
         <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
+        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">

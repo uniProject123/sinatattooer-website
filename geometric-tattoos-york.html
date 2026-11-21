@@ -20,6 +20,7 @@
   </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
+      if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // no analytics from local testing
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -119,7 +120,7 @@
         "name": "What is sacred geometry in tattooing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sacred geometry refers to geometric patterns found in nature and ancient architecture — the Flower of Life, Metatron's Cube, the Fibonacci spiral, Platonic solids. In tattooing, these forms are applied with precise linework and are often combined with dotwork shading or blackwork fills to create intricate, symmetrical compositions."
+          "text": "Sacred geometry refers to patterns found in nature and ancient architecture — the Flower of Life, Metatron's Cube, the Fibonacci spiral, Platonic solids. In tattooing, these forms are applied with precise linework, often combined with dotwork shading or blackwork fills to create intricate, symmetrical compositions."
         }
       },
       {
@@ -127,7 +128,7 @@
         "name": "Do geometric tattoos require multiple sessions?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It depends on size and complexity. Small to medium geometric pieces — a sleeve panel, a forearm mandala — typically fit in one session. Large back pieces or full sleeves built around geometric structures take multiple sessions. Sina will give you a realistic time estimate when you enquire."
+          "text": "It depends on size and complexity. Small to medium geometric pieces — a forearm mandala, a sleeve panel — typically fit in one session. Large back pieces or full geometric sleeves take multiple sessions. Sina will give you a realistic time estimate when you enquire."
         }
       },
       {
@@ -135,7 +136,7 @@
         "name": "Can geometric designs be combined with other styles?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — geometric works well as a framework for other elements. Realism portraits inside geometric frames, floral compositions within mandala structures, and blackwork patterns combined with fine linework are all popular combinations. Send your concept and Sina will advise on how to build the design."
+          "text": "Yes — geometric works well as a structural framework for other elements. Realism portraits inside geometric frames, florals within mandala structures, and blackwork combined with fine linework are all popular. Send your concept and Sina will advise on how to build the design."
         }
       },
       {
@@ -143,7 +144,7 @@
         "name": "How much does a geometric tattoo cost in York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pricing is £70 per hour or £400 for a full day. Geometric work with dense linework or dotwork typically takes longer per square centimetre than simpler designs. A non-refundable deposit confirms your booking and is deducted from the final price."
+          "text": "Pricing is £70 per hour or £400 for a full day. Dense linework and dotwork typically takes longer per square centimetre than simpler styles. A non-refundable deposit confirms your booking and is deducted from the final price."
         }
       }
     ]
@@ -151,7 +152,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111b" />
+  <link rel="stylesheet" href="style.css?v=20261121a" />
 </head>
 
 <body>
@@ -371,7 +372,8 @@
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
         <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
+        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">

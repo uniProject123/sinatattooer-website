@@ -24,6 +24,7 @@
   </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
+      if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // no analytics from local testing
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -142,7 +143,7 @@
         "name": "How much does a fine line tattoo cost in York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pricing is £70 per hour or £400 for a full day. Most fine line pieces are one-session jobs. A non-refundable deposit secures your slot and is deducted from the final price."
+          "text": "Pricing is £70 per hour or £400 for a full day. Most fine line pieces are one-session jobs. A non-refundable deposit secures your slot and is deducted from the final price. See the preparation guide for what to bring."
         }
       }
     ]
@@ -150,7 +151,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111b" />
+  <link rel="stylesheet" href="style.css?v=20261121a" />
 </head>
 
 <body>
@@ -371,7 +372,8 @@
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
         <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
+        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">

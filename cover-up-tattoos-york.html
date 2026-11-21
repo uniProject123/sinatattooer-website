@@ -24,6 +24,7 @@
   </script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
+      if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return; // no analytics from local testing
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
@@ -142,7 +143,7 @@
         "name": "How much does a cover-up tattoo cost in York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cover-ups are billed at the standard rate of £70 per hour or £400 for a full day, plus the non-refundable deposit. Most cover-ups take one or two sessions depending on size and complexity."
+          "text": "Cover-ups are billed at the standard rate of £70 per hour or £400 for a full day. A non-refundable deposit secures the appointment and is deducted from the final price. Most cover-ups take one or two sessions depending on size and complexity."
         }
       },
       {
@@ -158,7 +159,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261111b" />
+  <link rel="stylesheet" href="style.css?v=20261121a" />
 </head>
 
 <body>
@@ -196,7 +197,7 @@
 
     <section class="container gallery-page-intro reveal">
       <p>
-        Cover-ups are some of the most rewarding work in the studio. Whether it's an old name, a holiday tattoo that didn't go to plan, or a piece that just doesn't reflect who you are anymore — almost every existing tattoo can be reimagined into a custom design you'll actually want to wear. Sina specialises in cover-ups using blackwork, dense illustrative work and bold floral designs, all of which give the most predictable results.
+        Cover-ups are some of the most rewarding work in the studio. Whether it's an old name, a holiday tattoo that didn't go to plan, or a piece that just doesn't reflect who you are anymore — almost every existing tattoo can be reimagined into a custom design you'll actually want to wear. Sina specialises in cover-ups using blackwork, dense illustrative work, bold floral designs, and Japanese or traditional pieces, all of which give the most predictable results.
       </p>
       <p>
         Every cover-up starts with a confidential consultation. Send a clear, well-lit photo of the existing tattoo via the booking form and Sina will give you honest feedback on what's realistic — including whether a couple of laser sessions beforehand would give your final design more freedom. There's no judgement and no pressure: the goal is a result you're genuinely happy with, not a sale.
@@ -320,7 +321,7 @@
           <button class="faq-question" aria-expanded="false">How much does a cover-up tattoo cost in York?</button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              <p>Cover-ups are billed at the standard rate of £70 per hour or £400 for a full day, plus the non-refundable deposit. Most cover-ups take one or two sessions depending on size and complexity.</p>
+              <p>Cover-ups are billed at the standard rate of £70 per hour or £400 for a full day. A non-refundable deposit secures the appointment and is deducted from the final price. Most cover-ups take one or two sessions depending on size and complexity.</p>
             </div>
           </div>
         </li>
@@ -387,7 +388,8 @@
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
         <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">Open daily, 11 am – 6 pm</p>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
+        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">

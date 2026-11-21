@@ -370,14 +370,16 @@ a:hover { color: var(--color-accent-hover); }
 .hero {
   position: relative;
   width: 100%;
-  height: clamp(420px, 65vh, 700px);
+  /* min-height (not height) so a long H1 on a short phone grows the hero instead of being clipped */
+  min-height: clamp(420px, 65vh, 700px);
+  display: flex;
   overflow: hidden;
 }
 
 .hero-overlay {
   position: relative;
   width: 100%;
-  height: 100%;
+  display: flex;
 }
 
 .hero-bg {
@@ -399,7 +401,7 @@ a:hover { color: var(--color-accent-hover); }
 .hero-content {
   position: relative;
   z-index: 1;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -455,6 +457,22 @@ a:hover { color: var(--color-accent-hover); }
 .btn-book--dark {
   margin-top: var(--space-8);
 }
+
+/* Google rating under booking CTAs */
+.rating-line {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+}
+.rating-line a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: inline-block;
+  padding-block: var(--space-2);
+}
+.rating-line a:hover,
+.rating-line a:focus-visible { color: var(--color-text); text-decoration: underline; }
+.rating-line span { color: var(--color-accent); letter-spacing: 0.1em; margin-right: 0.35em; }
 
 /* --- Sections --- */
 section {
@@ -1052,6 +1070,17 @@ footer {
   font-size: var(--text-sm);
   font-family: var(--font-body);
   font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.pricing-note {
+  flex-basis: 100%;
+  max-width: none;
+  margin: calc(var(--space-4) - var(--space-8)) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
 

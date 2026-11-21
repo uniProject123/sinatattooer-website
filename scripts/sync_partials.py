@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Sync the shared nav and footer into every page as static HTML.
+"""Sync the shared nav and footer into every page as static HTML, and rebuild
+each page's FAQPage JSON-LD from its visible FAQ.
 
 Why: the nav and footer used to be injected by components.js at runtime, so
 crawlers and no-JS visitors saw pages with no navigation. They now live in the
@@ -117,7 +118,9 @@ def build_footer() -> str:
         '        <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br>'
         '<a href="tel:+447356030600">07356 030600</a><br>'
         '<a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>\n'
-        '        <p class="footer-hours">Open daily, 11 am – 6 pm</p>\n'
+        '        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; '
+        'call or message first to check walk-in availability.</p>\n'
+        '        <p class="footer-hours">Registered with City of York Council for tattooing.</p>\n'
         '      </div>\n'
         '    </div>\n'
         '    <div class="footer-bottom">\n'
@@ -147,6 +150,54 @@ FOOTER_BLOCK = re.compile(r'<!-- partial:footer -->.*?<!-- /partial:footer -->',
 BC_PLACEHOLDER = re.compile(r"<div data-component=\"breadcrumbs\" data-items='([^']*)'></div>")
 
 
+FAQ_ITEM = re.compile(
+    r'<button class="faq-question"[^>]*>(.*?)</button>\s*'
+    r'<div class="faq-answer"[^>]*>\s*<div class="faq-answer-inner">(.*?)</div>\s*</div>',
+    re.S,
+)
+FAQ_SCHEMA = re.compile(
+    r'(<script type="application/ld\+json">)\s*\{\s*"@context": "https://schema.org",\s*"@type": "FAQPage".*?(</script>)',
+    re.S,
+)
+ARROW_LINK = re.compile(r'<a\b[^>]*>[^<]*&rarr;</a>')
+TAG = re.compile(r'<[^>]+>')
+
+
+def html_to_text(fragment: str) -> str:
+    """Visible answer HTML -> plain text for the schema.
+
+    "Read more ->" style links are dropped (they're navigation, not answer),
+    list items become sentences, everything else is the visible wording."""
+    fragment = ARROW_LINK.sub("", fragment)
+    parts = []
+    for block in re.split(r'</p>|</li>', fragment):
+        t = html.unescape(TAG.sub(" ", block))
+        t = re.sub(r"\s+", " ", t).strip()
+        t = re.sub(r"\s+([.,;:!?])", r"\1", t)
+        if not t or t.endswith(":"):
+            continue
+        if t[-1] not in ".!?":
+            t += "."
+        parts.append(t)
+    return " ".join(parts)
+
+
+def build_faq_schema(text: str):
+    items = [
+        {
+            "@type": "Question",
+            "name": html.unescape(TAG.sub("", q)).strip(),
+            "acceptedAnswer": {"@type": "Answer", "text": html_to_text(a)},
+        }
+        for q, a in FAQ_ITEM.findall(text)
+    ]
+    if not items:
+        return None
+    data = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": items}
+    body = json.dumps(data, indent=2, ensure_ascii=False)
+    return "\n".join("  " + line for line in body.split("\n"))
+
+
 def render(text: str) -> str:
     nav = lambda page: f'<!-- partial:nav page="{page}" -->\n  {build_nav(page)}\n  <!-- /partial:nav -->'
     foot = f'<!-- partial:footer -->\n  {build_footer()}\n  <!-- /partial:footer -->'
@@ -155,6 +206,10 @@ def render(text: str) -> str:
     text = FOOTER_PLACEHOLDER.sub(lambda m: foot, text)
     text = FOOTER_BLOCK.sub(lambda m: foot, text)
     text = BC_PLACEHOLDER.sub(lambda m: build_breadcrumbs(json.loads(m.group(1))), text)
+    # FAQPage JSON-LD is generated from the visible FAQ so the two can't drift.
+    faq = build_faq_schema(text)
+    if faq:
+        text = FAQ_SCHEMA.sub(lambda m: f"{m.group(1)}\n{faq}\n  {m.group(2)}", text)
     return text
 
 
