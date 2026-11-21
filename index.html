@@ -147,7 +147,7 @@
 
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261121c" />
+  <link rel="stylesheet" href="style.css?v=20261121d" />
 </head>
 
 <body id="top">
@@ -531,19 +531,52 @@
 
     <hr class="section-divider" aria-hidden="true" />
 
-    <!-- Reviews: Live Google Reviews via EmbedSocial -->
-    <section class="reviews reveal">
+    <!-- Reviews: hand-picked Google reviews as static HTML (verbatim; "&hellip;" marks cuts).
+         Live EmbedSocial widget below loads on click. No Review schema: Google ignores self-serving review markup. -->
+    <section class="reviews reveal" id="reviews">
       <div class="container">
         <h2>Reviews</h2>
-        <p class="reviews-sub">Live from <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank"
-            rel="noopener noreferrer">Google Reviews</a></p>
+        <p class="reviews-sub"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 from 50+
+          <a href="https://maps.google.com/?cid=9494495319318612564" target="_blank" rel="noopener noreferrer">Google reviews</a>. A few of them:</p>
+        <figure class="review-feature">
+          <blockquote><p>Hidden gem! Amazing design and clean line work. super chill guy, quick working and concentrated.
+              will definitely be booking again x</p></blockquote>
+          <figcaption><strong>Olivia H.</strong> &middot; Google review, October 2026</figcaption>
+        </figure>
+        <ul class="review-cards" role="list">
+          <li>
+            <figure class="review-card">
+              <blockquote><p>Would highly recommend. Very experienced, calm and patient and came up with the most perfect design, exactly what I wanted&hellip; If you want a tattoo whether fine line or detailed this is the person to go to. Aftercare also amazing.</p></blockquote>
+              <figcaption><strong>Hannah C.</strong> &middot; Google review, September 2026</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="review-card">
+              <blockquote><p>Sina tattooed this lovely and incredible design on my leg over seven years ago, and even after all this time, it still doesn&rsquo;t need any touch-ups. The details remain beautiful and impressive.</p></blockquote>
+              <figcaption><strong>Shahin Q.</strong> &middot; Google review, August 2026</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="review-card">
+              <blockquote><p>Sina was amazing, made me feel really calm and I was amazed at his work, I would highly recommend anyone who is unsure.</p></blockquote>
+              <figcaption><strong>Diana G.</strong> &middot; Google review, July 2026</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="review-card">
+              <blockquote><p>Visited this tattoo studio after doing research for a tattooist to complete a piece, to complete our trip to York for a 30th birthday. Lovely gentleman who was friendly and kind. Clean environment. He was very accommodating to the change of tattoo that was originally asked for.</p></blockquote>
+              <figcaption><strong>Ray R.</strong> &middot; Google review, August 2026</figcaption>
+            </figure>
+          </li>
+        </ul>
+        <p class="reviews-all"><a href="https://maps.google.com/?cid=9494495319318612564" target="_blank" rel="noopener noreferrer" data-cta="reviews-google">Read
+            all reviews on Google &rarr;</a></p>
       </div>
       <div class="reviews-widget-wrapper reviews-widget-wrapper--gated">
         <div class="embed-gate">
-          <p class="embed-gate-title"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 from 50+ Google reviews</p>
+          <p class="embed-gate-title">The latest reviews, live from Google</p>
           <div class="embed-gate-actions">
-            <button type="button" class="btn-instagram" data-embed-load="reviews">Show reviews</button>
-            <a href="https://maps.google.com/?cid=9494495319318612564" target="_blank" rel="noopener noreferrer">Read them on Google</a>
+            <button type="button" class="btn-instagram" data-embed-load="reviews">Show live reviews</button>
           </div>
           <p class="embed-gate-note">Reviews load from EmbedSocial, which may set its own cookies.</p>
         </div>
