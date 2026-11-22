@@ -27,3 +27,9 @@
 /old-school /oldschool-tattoos-york 301
 /traditional /oldschool-tattoos-york 301
 /traditional-tattoos-york /oldschool-tattoos-york 301
+
+# Repo files that aren't part of the site (Pages serves the whole repo).
+# Pages redirects can't return 404, so send them to the homepage.
+/README.md / 301
+/.gitignore / 301
+/scripts/* / 301

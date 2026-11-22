@@ -162,6 +162,30 @@
     });
   });
 
+  /* Direct contact links (phone, WhatsApp, Instagram DM, email) without their
+     own data-cta: tracked as cta_click too, so the booking funnel counts
+     people who call or message instead of using the form. */
+  var contactSelector = 'a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me/"], a[href*="ig.me/"]';
+  function contactChannel(href) {
+    if (href.indexOf('tel:') === 0) return 'phone';
+    if (href.indexOf('mailto:') === 0) return 'email';
+    if (href.indexOf('wa.me/') !== -1) return 'whatsapp';
+    return 'instagram-dm';
+  }
+  document.querySelectorAll(contactSelector).forEach(function (a) {
+    if (a.hasAttribute('data-cta')) return;
+    a.addEventListener('click', function () {
+      var where = a.closest('footer') ? 'site-footer' : getCTALocation(a);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'cta_click',
+        cta_label: a.textContent.trim().replace(/\s+/g, ' '),
+        cta_location: where + '-' + contactChannel(a.getAttribute('href')),
+        cta_destination: a.href
+      });
+    });
+  });
+
   /* ── Click-to-load embeds ──
      Google Maps may set third-party cookies, so it only loads when the
      visitor asks for it. */

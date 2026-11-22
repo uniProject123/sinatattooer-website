@@ -861,12 +861,14 @@ behold-widget {
 
 .contact-email { margin-bottom: 0; }
 
-.contact-hours {
+.contact-hours,
+.contact-parking {
   margin-bottom: var(--space-3);
   color: var(--color-text-muted);
 }
 
 .contact-hours strong,
+.contact-parking strong,
 .contact-phone strong {
   color: var(--color-text);
 }
@@ -2072,6 +2074,28 @@ behold-widget {
   .footer-contact { grid-column: 1 / -1; }
 }
 
+/* Touch screens: give footer and contact links a finger-sized hit area
+   (44px tall) without changing how they look. */
+@media (pointer: coarse), (max-width: 768px) {
+  .footer-social { gap: var(--space-2) var(--space-6); margin-top: var(--space-4); }
+  .footer-social a,
+  .footer-col ul a,
+  .footer-legal a,
+  .footer-cookie-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer-col ul { gap: 0; }
+  .footer-col h3 { margin-bottom: var(--space-2); }
+  .footer-contact address a,
+  .contact-details a {
+    display: inline-block;
+    line-height: 44px;
+  }
+  .footer-bottom { align-items: center; }
+}
+
 /* ============================================
    VISIBLE BREADCRUMBS
    ============================================ */
@@ -2560,9 +2584,14 @@ behold-widget {
 .cookie-banner__btn:focus-visible { outline: 2px solid var(--color-accent-hover); outline-offset: 2px; }
 .has-cookie-banner .back-to-top { bottom: 9rem; }
 @media (max-width: 480px) {
+  /* Compact on phones: smaller text and padding, buttons side by side,
+     so the banner covers as little of the first screen as possible. */
   .cookie-banner { left: 8px; right: 8px; bottom: 8px; }
-  .cookie-banner__actions { width: 100%; }
-  .cookie-banner__btn { flex: 1; }
+  .cookie-banner__inner { gap: 0.625rem; padding: 0.75rem 0.875rem; }
+  .cookie-banner__text { flex-basis: 100%; font-size: var(--text-sm); line-height: 1.45; }
+  .cookie-banner__actions { width: 100%; gap: 0.5rem; }
+  .cookie-banner__btn { flex: 1; min-width: 0; padding: var(--space-2) var(--space-4); }
+  .has-cookie-banner .back-to-top { bottom: 8.5rem; }
 }
 
 .footer-legal { margin: 0; }
