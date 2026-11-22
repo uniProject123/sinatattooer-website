@@ -1,25 +1,3 @@
-<!--
-  =====================================================================
-  GALLERY PAGE TEMPLATE — Sina Tattooer
-  =====================================================================
-  Pattern shared by /blackwork-tattoos-york, /fineline-tattoos-york,
-  /cover-up-tattoos-york and any future single-style landing page.
-
-  To create a new gallery page, copy this file and update only the
-  sections marked [EDIT].
-    1. <head> meta — title, description, canonical, og:url, og:title
-    2. <h1> + page-header-sub
-    3. .gallery-page-intro paragraphs (200–300 words, target keyword)
-    4. .gallery-grid — image src + alt text per slot
-    5. .style-why cards (3 cards: durability / placement / design notes)
-    6. .faq-list items (3–5 Q&A specific to this style)
-    7. JSON-LD: BreadcrumbList "name" + "item" url, Service "serviceType"
-       and "name", FAQPage to mirror visible FAQ.
-
-  Images: drop into images/gallery/<slug>/N.webp (4:5 portrait).
-  Missing images fall back to a text placeholder via onerror.
-  =====================================================================
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,12 +27,10 @@
   <!-- End Google Tag Manager -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- [EDIT] description: 150–160 chars, target keyword + York + variant -->
   <meta name="description"
     content="Blackwork tattoos in York by Sina Tattooer: bold solid black, illustrative and ornamental blackwork, plus blackwork cover-ups. Custom designs, book direct." />
   <meta name="author" content="Sina Tattooer" />
   <meta name="theme-color" content="#0e0d0c" />
-  <!-- [EDIT] canonical: clean URL, no .html -->
   <link rel="canonical" href="https://sinatattooer.co.uk/blackwork-tattoos-york" />
 
   <!-- Favicon -->
@@ -64,20 +40,18 @@
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
-  <!-- [EDIT] og:title -->
   <meta property="og:title" content="Blackwork Tattoos in York | Sina Tattooer" />
   <meta property="og:description"
     content="Blackwork tattoos in York by Sina Tattooer: bold solid black, illustrative and ornamental blackwork, plus blackwork cover-ups. Custom designs, book direct." />
-  <!-- [EDIT] og:url -->
   <meta property="og:url" content="https://sinatattooer.co.uk/blackwork-tattoos-york" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:site_name" content="Sina Tattooer" />
-  <meta property="og:image" content="https://sinatattooer.co.uk/images/style-blackwork.webp" />
-  <meta property="og:image:width" content="600" />
-  <meta property="og:image:height" content="800" />
+  <meta property="og:image" content="https://sinatattooer.co.uk/images/share/blackwork.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:alt" content="Blackwork tattoo by Sina Tattooer, York" />
 
-  <!-- [EDIT] title -->
   <title>Blackwork Tattoos in York | Sina Tattooer</title>
 
   <!-- Twitter / X Card -->
@@ -85,14 +59,14 @@
   <meta name="twitter:title" content="Blackwork Tattoos in York | Sina Tattooer" />
   <meta name="twitter:description"
     content="Blackwork tattoos in York by Sina Tattooer: bold solid black, illustrative and ornamental blackwork, plus blackwork cover-ups. Custom designs, book direct." />
-  <meta name="twitter:image" content="https://sinatattooer.co.uk/images/style-blackwork.webp" />
+  <meta name="twitter:image" content="https://sinatattooer.co.uk/images/share/blackwork.jpg" />
   <meta name="twitter:image:alt" content="Blackwork tattoo by Sina Tattooer, York" />
 
   <!-- Fonts -->
   <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
   <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
 
-  <!-- BreadcrumbList Schema [EDIT name + item] -->
+  <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -105,7 +79,7 @@
   }
   </script>
 
-  <!-- Service Schema [EDIT serviceType + name + description] -->
+  <!-- Service Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -131,7 +105,7 @@
   }
   </script>
 
-  <!-- FAQPage Schema [EDIT mirrors visible FAQ] -->
+  <!-- FAQPage Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -174,7 +148,7 @@
   </script>
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261122a" />
+  <link rel="stylesheet" href="style.css?v=20261122b" />
 </head>
 
 <body>
@@ -200,7 +174,7 @@
   </nav>
   <!-- /partial:nav -->
 
-  <!-- ========== PAGE HEADER [EDIT h1 + sub] ========== -->
+  <!-- ========== PAGE HEADER ========== -->
   <header class="page-header">
     <div class="container">
       <h1>Blackwork Tattoos in York</h1>
@@ -211,7 +185,7 @@
 
   <main id="main">
 
-    <!-- ========== INTRO [EDIT both paragraphs] ========== -->
+    <!-- ========== INTRO ========== -->
     <section class="container gallery-page-intro reveal">
       <p>
         Blackwork is the studio's most-requested style — and one of the most rewarding. Solid black ink, confident linework and high-contrast composition give blackwork its impact, and because the design relies on depth of black rather than colour, it ages better than almost any other approach. Whether you're after an illustrative blackwork piece, geometric blackwork, an ornamental sleeve panel or a clean cover-up, every piece is designed and applied by Sina here in York.
@@ -224,73 +198,7 @@
       </p>
     </section>
 
-    <!-- ========== GALLERY [EDIT 8 image slots — alt text matters for SEO] ========== -->
-    <!-- GALLERY HIDDEN (5 Nov 2026): the photos were never uploaded, so visitors saw empty "Photo 01" boxes.
-         To restore: add images/gallery/blackwork/1.webp to 8.webp, update the alt text to match each photo,
-         then delete these three comment lines and the closing marker after the gallery.
-    <section class="container reveal-stagger" aria-label="Blackwork tattoo gallery">
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/1.webp"
-            alt="Geometric blackwork forearm tattoo in York by Sina Tattooer"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 01</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/2.webp"
-            alt="Illustrative blackwork sleeve detail by Sina Tattooer, York"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 02</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/3.webp"
-            alt="Ornamental blackwork chest panel by Sina Tattooer, York"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 03</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/4.webp"
-            alt="Solid black cover-up tattoo by Sina Tattooer, York"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 04</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/5.webp"
-            alt="Blackwork mandala back piece by Sina Tattooer, York"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 05</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/6.webp"
-            alt="Blackwork dotwork shoulder tattoo in York by Sina Tattooer"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 06</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/7.webp"
-            alt="Bold blackwork lettering by Sina Tattooer, York"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 07</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery/blackwork/8.webp"
-            alt="Custom blackwork leg piece by Sina Tattooer, York"
-            width="600" height="750" loading="lazy" decoding="async"
-            onerror="this.style.display='none'" />
-          <div class="gallery-placeholder">Photo 08</div>
-        </div>
-      </div>
-    </section>
-    END GALLERY HIDDEN -->
-
-    <!-- ========== WHY THIS STYLE [EDIT 3 cards] ========== -->
+    <!-- ========== WHY THIS STYLE ========== -->
     <section class="container reveal" aria-labelledby="why-blackwork">
       <h2 class="gallery-section-heading" id="why-blackwork">Why blackwork ages well</h2>
       <div class="style-why">
@@ -309,7 +217,7 @@
       </div>
     </section>
 
-    <!-- ========== FAQ [EDIT mirror in FAQPage schema above] ========== -->
+    <!-- ========== FAQ ========== -->
     <section class="container reveal" aria-labelledby="gallery-faq">
       <h2 class="gallery-section-heading" id="gallery-faq">Common questions about blackwork</h2>
       <ul class="faq-list" role="list">
@@ -348,7 +256,7 @@
       </ul>
     </section>
 
-    <!-- ========== CTA [EDIT copy] ========== -->
+    <!-- ========== CTA ========== -->
     <section class="container reveal">
       <div class="gallery-cta-block">
         <h2>Ready to book your blackwork piece?</h2>
@@ -360,7 +268,6 @@
   </main>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
-
 
   <!-- partial:footer -->
   <footer class="site-footer">
@@ -413,7 +320,7 @@
   <!-- /partial:footer -->
 
   <script src="components.js?v=20261122a"></script>
-  <script src="main.js?v=20261122a"></script>
+  <script src="main.js?v=20261122b"></script>
   <script src="consent.js?v=20261105" defer></script>
 </body>
 
