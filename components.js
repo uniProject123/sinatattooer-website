@@ -111,7 +111,7 @@
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (m) {
         var wrap = m.target.closest('.skeleton-wrap');
-        if (wrap && wrap.querySelector('iframe, .behold-grid, .embedsocial-hashtag > div')) {
+        if (wrap && wrap.querySelector('iframe, .behold-grid')) {
           wrap.classList.add('skeleton-loaded');
         }
       });

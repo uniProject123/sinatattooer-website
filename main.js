@@ -6,8 +6,13 @@
   var menu = document.getElementById('navMenu');
   var nav = document.getElementById('site-nav');
 
+  function setMenuLabel(open) {
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
   function closeMenu(returnFocus) {
     toggle.setAttribute('aria-expanded', 'false');
+    setMenuLabel(false);
     menu.classList.remove('is-open');
     if (returnFocus) toggle.focus();
   }
@@ -16,6 +21,7 @@
     toggle.addEventListener('click', function () {
       var open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
+      setMenuLabel(!open);
       menu.classList.toggle('is-open');
       if (!open) {
         var firstLink = menu.querySelector('a');
@@ -98,12 +104,24 @@
     });
   });
 
-  /* ── Back to Top ── */
+  /* ── Back to Top ──
+     Shown after about two screens of scrolling, hidden again while the footer
+     is on screen so it never sits on top of footer text. */
   var backToTopBtn = document.getElementById('backToTop');
   if (backToTopBtn) {
-    window.addEventListener('scroll', function () {
-      backToTopBtn.classList.toggle('is-visible', window.scrollY > 600);
-    }, { passive: true });
+    var footerInView = false;
+    var updateBackToTop = function () {
+      var far = window.scrollY > window.innerHeight * 2;
+      backToTopBtn.classList.toggle('is-visible', far && !footerInView);
+    };
+    var footerEl = document.querySelector('.site-footer');
+    if (footerEl && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        footerInView = entries[0].isIntersecting;
+        updateBackToTop();
+      }).observe(footerEl);
+    }
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
 
     backToTopBtn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -112,7 +130,7 @@
 
   /* ── Booking CTA tracking (pushes to GTM dataLayer) ── */
   function getCTALocation(el) {
-    if (el.classList.contains('nav-cta--mobile')) return 'nav-mobile';
+    if (el.classList.contains('nav-book')) return 'nav-mobile';
     if (el.classList.contains('nav-cta')) return 'nav-desktop';
     var section = el.closest('section, header.hero, .guide-cta-wrap, .styles-cta-wrap');
     if (!section) return 'unknown';
@@ -145,8 +163,8 @@
   });
 
   /* ── Click-to-load embeds ──
-     Google Maps and EmbedSocial set third-party cookies (EmbedSocial pulls in
-     YouTube's), so they only load when the visitor asks for them. */
+     Google Maps may set third-party cookies, so it only loads when the
+     visitor asks for it. */
   var embedLoaders = {
     map: function (gate) {
       var box = gate.closest('[data-map-src]');
@@ -159,16 +177,6 @@
       f.referrerPolicy = 'no-referrer-when-downgrade';
       f.title = 'Sina Tattooer location on Google Maps';
       box.replaceChildren(f);
-    },
-    reviews: function (gate) {
-      var wrap = gate.parentNode;
-      wrap.classList.remove('reviews-widget-wrapper--gated');
-      gate.remove();
-      if (document.getElementById('EmbedSocialHashtagScript')) return;
-      var js = document.createElement('script');
-      js.id = 'EmbedSocialHashtagScript';
-      js.src = 'https://embedsocial.com/cdn/ht.js';
-      document.head.appendChild(js);
     }
   };
 
