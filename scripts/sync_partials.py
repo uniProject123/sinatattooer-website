@@ -59,13 +59,14 @@ def build_nav(page: str) -> str:
         lnk(p + "booking", "Booking", "booking"),
         lnk(p + "faq", "FAQ", "faq"),
         lnk(p + "contact", "Find Us", "contact"),
-        f'<li class="nav-mobile-cta"><a href="{TALLY}" target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta--mobile">Book a Tattoo</a></li>',
     ])
     back = "top" if is_home else "home"
     return (
         '<nav class="site-nav" id="site-nav" aria-label="Main navigation">\n'
         '    <div class="nav-inner">\n'
         f'      <a href="{home}" class="nav-logo" aria-label="Sina Tattooer — back to {back}">Sina Tattooer</a>\n'
+        # Phones: compact Book pill in the bar itself, so it stays visible without opening the menu.
+        f'      <a href="{TALLY}" target="_blank" rel="noopener noreferrer" class="nav-book">Book</a>\n'
         '      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span></span><span></span><span></span></button>\n'
         '      <ul class="nav-links" id="navMenu" role="list">\n'
         f'{items}\n'
@@ -116,13 +117,13 @@ def build_footer() -> str:
         '      </div>\n'
         '      <div class="footer-col footer-contact">\n'
         '        <h3>Studio</h3>\n'
-        '        <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br>'
-        '<a href="tel:+447356030600">07356 030600</a><br>'
+        '        <address><strong>Mr Snips Barbers</strong>23 Yarburgh Way<br>York YO10 5HD<br>'
+        '<a href="tel:+447356030600">07356 030600</a> &middot; '
         '<a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer">WhatsApp</a><br>'
         '<a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>\n'
         '        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; '
-        'call or message first to check walk-in availability.</p>\n'
-        '        <p class="footer-hours">Registered with City of York Council for tattooing.</p>\n'
+        'call or message first to check walk-in availability. '
+        'Registered with City of York Council for tattooing.</p>\n'
         '      </div>\n'
         '    </div>\n'
         '    <div class="footer-bottom">\n'

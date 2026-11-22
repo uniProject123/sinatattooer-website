@@ -124,8 +124,8 @@
   <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
   <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
 
-  <!-- Behold loads lazily below the fold, so a DNS hint is enough. Google Maps and EmbedSocial
-       only load when the visitor clicks (they set third-party cookies), see main.js -->
+  <!-- Behold loads lazily below the fold, so a DNS hint is enough. Google Maps
+       only loads when the visitor clicks (it may set third-party cookies), see main.js -->
   <link rel="dns-prefetch" href="https://w.behold.so">
 
   <!-- Behold Instagram Feed Widget (Lazy-loaded) -->
@@ -147,7 +147,7 @@
 
 
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="style.css?v=20261121d" />
+  <link rel="stylesheet" href="style.css?v=20261122a" />
 </head>
 
 <body id="top">
@@ -160,6 +160,7 @@
   <nav class="site-nav" id="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="#top" class="nav-logo" aria-label="Sina Tattooer — back to top">Sina Tattooer</a>
+      <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-book">Book</a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navMenu" role="list">
         <li><a href="#top" class="nav-link" aria-current="page">Home</a></li>
@@ -168,7 +169,6 @@
         <li><a href="#booking" class="nav-link">Booking</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
         <li><a href="#contact" class="nav-link">Find Us</a></li>
-        <li class="nav-mobile-cta"><a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta--mobile">Book a Tattoo</a></li>
       </ul>
       <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="nav-cta">Book a Tattoo</a>
     </div>
@@ -184,7 +184,7 @@
       </picture>
       <div class="hero-content">
         <h1>Tattoo Artist in York</h1>
-        <p class="hero-tagline">Custom tattoos, designed one-to-one.<br>Private studio in Badger Hill, York.</p>
+        <p class="hero-tagline"><span>Custom tattoos, designed one-to-one.</span> <span>Private studio in Badger Hill, York.</span></p>
         <a href="https://tally.so/r/LZJBLj" target="_blank" rel="noopener noreferrer" class="btn-book">Book a Tattoo
           &rarr;</a>
         <p class="rating-line"><a href="https://maps.google.com/?cid=9494495319318612564" target="_blank"
@@ -242,33 +242,35 @@
     <hr class="section-divider" aria-hidden="true" />
 
     <!-- How It Works -->
-    <section class="process container reveal" id="process">
-      <h2>How It Works</h2>
-      <p>From first enquiry to healed tattoo &mdash; here's what to expect:</p>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="process-number">1</div>
-          <h3>Enquiry</h3>
-          <p>Fill in the booking form with your idea, placement, size and any reference images. Sina will get back to
-            you within 48 hours.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-number">2</div>
-          <h3>Booking</h3>
-          <p>Sina will respond with a personalised quote and a calendar link to choose your preferred date. Once you're
-            happy, a deposit link is sent to confirm your booking.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-number">3</div>
-          <h3>Session</h3>
-          <p>Relax in a private, one-on-one studio setting while Sina brings your design to life with precision and
-            care. <a href="/tattoo-preparation">How to prepare &rarr;</a></p>
-        </div>
-        <div class="process-step">
-          <div class="process-number">4</div>
-          <h3>Aftercare</h3>
-          <p>You'll leave with a second skin dressing and detailed aftercare advice to ensure your tattoo heals
-            perfectly. <a href="/tattoo-aftercare">Aftercare guide &rarr;</a></p>
+    <section class="process reveal" id="process">
+      <div class="container">
+        <h2>How It Works</h2>
+        <p>From first enquiry to healed tattoo &mdash; here's what to expect:</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-number">1</div>
+            <h3>Enquiry</h3>
+            <p>Fill in the booking form with your idea, placement, size and any reference images. Sina will get back to
+              you within 48 hours.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">2</div>
+            <h3>Booking</h3>
+            <p>Sina will respond with a personalised quote and a calendar link to choose your preferred date. Once you're
+              happy, a deposit link is sent to confirm your booking.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">3</div>
+            <h3>Session</h3>
+            <p>Relax in a private, one-on-one studio setting while Sina brings your design to life with precision and
+              care. <a href="/tattoo-preparation">How to prepare &rarr;</a></p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">4</div>
+            <h3>Aftercare</h3>
+            <p>You'll leave with a second skin dressing and detailed aftercare advice to ensure your tattoo heals
+              perfectly. <a href="/tattoo-aftercare">Aftercare guide &rarr;</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -360,169 +362,171 @@
     <hr class="section-divider" aria-hidden="true" />
 
     <!-- FAQ Section -->
-    <section class="faq container reveal" id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know before your appointment:</p>
+    <section class="faq reveal" id="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know before your appointment:</p>
 
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">How much does a tattoo cost?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Sina charges <strong>&pound;70 per hour</strong> or <strong>&pound;400 for a full day session</strong>.
-                The total cost depends on the size, detail and placement of your tattoo. A personalised quote will be
-                provided after reviewing your enquiry.</p>
-              <p>A non-refundable deposit is required to secure your appointment. This deposit is deducted from the
-                final price on the day of your session.</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How much does a tattoo cost?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Sina charges <strong>&pound;70 per hour</strong> or <strong>&pound;400 for a full day session</strong>.
+                  The total cost depends on the size, detail and placement of your tattoo. A personalised quote will be
+                  provided after reviewing your enquiry.</p>
+                <p>A non-refundable deposit is required to secure your appointment. This deposit is deducted from the
+                  final price on the day of your session.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">What should I expect at my first appointment?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>On the day, Sina will walk you through the design, discuss placement and sizing, and apply a stencil so
-                you can see exactly how it will look before any ink touches skin. The studio is private and relaxed and
-                you can have as many breaks as you need.</p>
-              <p>Please arrive well-rested, hydrated, and having eaten a proper meal. Avoid alcohol for at least 24
-                hours beforehand.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What should I expect at my first appointment?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>On the day, Sina will walk you through the design, discuss placement and sizing, and apply a stencil so
+                  you can see exactly how it will look before any ink touches skin. The studio is private and relaxed and
+                  you can have as many breaks as you need.</p>
+                <p>Please arrive well-rested, hydrated, and having eaten a proper meal. Avoid alcohol for at least 24
+                  hours beforehand.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">Does getting a tattoo hurt?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Pain levels vary depending on the placement, your personal tolerance, and the size of the piece. Areas
-                with thinner skin or closer to bone (ribs, spine, inner arm) tend to be more sensitive, while fleshier
-                areas (outer arm, thigh, calf) are generally more comfortable.</p>
-              <p>Most clients describe the sensation as a scratching or vibrating feeling rather than sharp pain. Sina
-                works at a comfortable pace and is happy to take breaks whenever needed.</p>
-              <p>Numbing cream isn't needed for most placements, but it's fine for very sensitive areas or large
-                blackout work. Mention it when you enquire.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Does getting a tattoo hurt?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Pain levels vary depending on the placement, your personal tolerance, and the size of the piece. Areas
+                  with thinner skin or closer to bone (ribs, spine, inner arm) tend to be more sensitive, while fleshier
+                  areas (outer arm, thigh, calf) are generally more comfortable.</p>
+                <p>Most clients describe the sensation as a scratching or vibrating feeling rather than sharp pain. Sina
+                  works at a comfortable pace and is happy to take breaks whenever needed.</p>
+                <p>Numbing cream isn't needed for most placements, but it's fine for very sensitive areas or large
+                  blackout work. Mention it when you enquire.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">Can you cover up an old tattoo?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Yes! Sina has extensive experience with cover-ups and reworks, using blackwork, Japanese or
-                traditional approaches depending on the piece. The best approach depends on the existing tattoo's
-                size, colour and placement. Send a clear photo of the current tattoo in your booking form and Sina
-                will advise on what's possible.</p>
-              <p>Options will be discussed during your consultation. <a href="/cover-up-tattoos-york">More about
-                cover-ups &rarr;</a></p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can you cover up an old tattoo?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Yes! Sina has extensive experience with cover-ups and reworks, using blackwork, Japanese or
+                  traditional approaches depending on the piece. The best approach depends on the existing tattoo's
+                  size, colour and placement. Send a clear photo of the current tattoo in your booking form and Sina
+                  will advise on what's possible.</p>
+                <p>Options will be discussed during your consultation. <a href="/cover-up-tattoos-york">More about
+                  cover-ups &rarr;</a></p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">How do I prepare for my tattoo session?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>To get the best results and most comfortable experience:</p>
-              <ul>
-                <li><strong>Eat a good meal</strong> before your appointment &mdash; low blood sugar can make you feel
-                  lightheaded</li>
-                <li><strong>Stay hydrated</strong> in the days leading up to your session</li>
-                <li><strong>Avoid alcohol</strong> for at least 24 hours before your appointment &mdash; it thins the
-                  blood</li>
-                <li><strong>Wear comfortable clothing</strong> that allows easy access to the tattoo area</li>
-                <li><strong>Avoid sunburn</strong> &mdash; tattooing sunburnt or irritated skin is not possible</li>
-              </ul>
-              <p><a href="/tattoo-preparation">Read the full preparation guide &rarr;</a></p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How do I prepare for my tattoo session?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>To get the best results and most comfortable experience:</p>
+                <ul>
+                  <li><strong>Eat a good meal</strong> before your appointment &mdash; low blood sugar can make you feel
+                    lightheaded</li>
+                  <li><strong>Stay hydrated</strong> in the days leading up to your session</li>
+                  <li><strong>Avoid alcohol</strong> for at least 24 hours before your appointment &mdash; it thins the
+                    blood</li>
+                  <li><strong>Wear comfortable clothing</strong> that allows easy access to the tattoo area</li>
+                  <li><strong>Avoid sunburn</strong> &mdash; tattooing sunburnt or irritated skin is not possible</li>
+                </ul>
+                <p><a href="/tattoo-preparation">Read the full preparation guide &rarr;</a></p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">How do I care for my new tattoo?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Sina uses <strong>second skin</strong> (a medical-grade transparent adhesive film) to protect your
-                fresh tattoo. Keep it on for up to 72 hours, then gently remove in a warm shower. After removal,
-                wash with lukewarm water and fragrance-free antibacterial soap, pat dry with a clean paper towel.</p>
-              <p>You'll also be recommended a <strong>specialist aftercare cream</strong> available at the studio for a
-                small cost. Apply a thin layer 2&ndash;3 times daily for the first 2 weeks. Avoid baths, swimming, direct
-                sunlight and tight clothing during healing.</p>
-              <p>Your tattoo will peel and may feel itchy &mdash; <strong>do not pick or scratch.</strong> Once fully
-                healed (4&ndash;6 weeks), always apply SPF 30+ sunscreen to protect your tattoo from fading.</p>
-              <p><a href="/tattoo-aftercare">Read the full aftercare guide &rarr;</a></p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How do I care for my new tattoo?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Sina uses <strong>second skin</strong> (a medical-grade transparent adhesive film) to protect your
+                  fresh tattoo. Keep it on for up to 72 hours, then gently remove in a warm shower. After removal,
+                  wash with lukewarm water and fragrance-free antibacterial soap, pat dry with a clean paper towel.</p>
+                <p>You'll also be recommended a <strong>specialist aftercare cream</strong> available at the studio for a
+                  small cost. Apply a thin layer 2&ndash;3 times daily for the first 2 weeks. Avoid baths, swimming, direct
+                  sunlight and tight clothing during healing.</p>
+                <p>Your tattoo will peel and may feel itchy &mdash; <strong>do not pick or scratch.</strong> Once fully
+                  healed (4&ndash;6 weeks), always apply SPF 30+ sunscreen to protect your tattoo from fading.</p>
+                <p><a href="/tattoo-aftercare">Read the full aftercare guide &rarr;</a></p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">What if I need to reschedule or cancel?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Life happens &mdash; if you need to reschedule, please give at least 48 hours. Your deposit can be
-                transferred to a new date.</p>
-              <p>Late cancellations or no-shows will result in the loss of your deposit, as the time slot has been
-                reserved exclusively for you and custom design work may have already begun.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What if I need to reschedule or cancel?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Life happens &mdash; if you need to reschedule, please give at least 48 hours. Your deposit can be
+                  transferred to a new date.</p>
+                <p>Late cancellations or no-shows will result in the loss of your deposit, as the time slot has been
+                  reserved exclusively for you and custom design work may have already begun.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">Do you take walk-ins?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Appointments are preferred, but walk-ins are possible when there's a free slot. Call or message first
-                to check walk-in availability: <a href="tel:+447356030600">07356 030600</a> or
-                <a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer" data-cta="faq-whatsapp">WhatsApp</a>.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do you take walk-ins?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Appointments are preferred, but walk-ins are possible when there's a free slot. Call or message first
+                  to check walk-in availability: <a href="tel:+447356030600">07356 030600</a> or
+                  <a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer" data-cta="faq-whatsapp">WhatsApp</a>.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">How do I pay?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>The deposit is usually a third to a half of your quote. It's paid by bank transfer, using the payment
-                link in your booking confirmation email. The rest is paid on the day by bank transfer or cash. Card
-                payments aren't accepted.</p>
-              <p>The payment link only arrives in your booking confirmation email, after you've chosen a date. If anyone
-                else asks you for a deposit in Sina's name, check with Sina first on
-                <a href="tel:+447356030600">07356 030600</a>.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How do I pay?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>The deposit is usually a third to a half of your quote. It's paid by bank transfer, using the payment
+                  link in your booking confirmation email. The rest is paid on the day by bank transfer or cash. Card
+                  payments aren't accepted.</p>
+                <p>The payment link only arrives in your booking confirmation email, after you've chosen a date. If anyone
+                  else asks you for a deposit in Sina's name, check with Sina first on
+                  <a href="tel:+447356030600">07356 030600</a>.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">Do you sell gift vouchers?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Yes, for any amount. Email or message with the amount and the recipient's name, pay by bank transfer,
-                and the voucher is emailed to you or posted as a printed card (postage extra). Vouchers are valid for
-                12 months and can be used towards the deposit or the final price.</p>
-              <p><a href="#vouchers">How to buy a voucher &rarr;</a></p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do you sell gift vouchers?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Yes, for any amount. Email or message with the amount and the recipient's name, pay by bank transfer,
+                  and the voucher is emailed to you or posted as a printed card (postage extra). Vouchers are valid for
+                  12 months and can be used towards the deposit or the final price.</p>
+                <p><a href="#vouchers">How to buy a voucher &rarr;</a></p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">Do I need ID?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Yes. By UK law you must be 18 or over to get a tattoo, so please bring valid photo ID (passport or
-                driving licence) to your appointment.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do I need ID?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Yes. By UK law you must be 18 or over to get a tattoo, so please bring valid photo ID (passport or
+                  driving licence) to your appointment.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">Do I need to bring reference images?</button>
-          <div class="faq-answer" role="region">
-            <div class="faq-answer-inner">
-              <p>Reference images are incredibly helpful but not essential. They give Sina a clear idea of the style,
-                mood and elements you're drawn to. You can include them in the booking form or send them via email.</p>
-              <p>Even if you only have a rough idea, Sina will work with you to develop the concept into a finished
-                design you'll love.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do I need to bring reference images?</button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <p>Reference images are incredibly helpful but not essential. They give Sina a clear idea of the style,
+                  mood and elements you're drawn to. You can include them in the booking form or send them via email.</p>
+                <p>Even if you only have a rough idea, Sina will work with you to develop the concept into a finished
+                  design you'll love.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -532,7 +536,7 @@
     <hr class="section-divider" aria-hidden="true" />
 
     <!-- Reviews: hand-picked Google reviews as static HTML (verbatim; "&hellip;" marks cuts).
-         Live EmbedSocial widget below loads on click. No Review schema: Google ignores self-serving review markup. -->
+         Refresh from docs/reviews-shortlist.md every month or two. No Review schema: Google ignores self-serving review markup. -->
     <section class="reviews reveal" id="reviews">
       <div class="container">
         <h2>Reviews</h2>
@@ -552,6 +556,12 @@
           </li>
           <li>
             <figure class="review-card">
+              <blockquote><p>Visited this tattoo studio after doing research for a tattooist to complete a piece, to complete our trip to York for a 30th birthday. Lovely gentleman who was friendly and kind. Clean environment. He was very accommodating to the change of tattoo that was originally asked for.</p></blockquote>
+              <figcaption><strong>Ray R.</strong> &middot; Google review, August 2026</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="review-card">
               <blockquote><p>Sina tattooed this lovely and incredible design on my leg over seven years ago, and even after all this time, it still doesn&rsquo;t need any touch-ups. The details remain beautiful and impressive.</p></blockquote>
               <figcaption><strong>Shahin Q.</strong> &middot; Google review, August 2026</figcaption>
             </figure>
@@ -562,38 +572,9 @@
               <figcaption><strong>Diana G.</strong> &middot; Google review, July 2026</figcaption>
             </figure>
           </li>
-          <li>
-            <figure class="review-card">
-              <blockquote><p>Visited this tattoo studio after doing research for a tattooist to complete a piece, to complete our trip to York for a 30th birthday. Lovely gentleman who was friendly and kind. Clean environment. He was very accommodating to the change of tattoo that was originally asked for.</p></blockquote>
-              <figcaption><strong>Ray R.</strong> &middot; Google review, August 2026</figcaption>
-            </figure>
-          </li>
         </ul>
         <p class="reviews-all"><a href="https://maps.google.com/?cid=9494495319318612564" target="_blank" rel="noopener noreferrer" data-cta="reviews-google">Read
             all reviews on Google &rarr;</a></p>
-      </div>
-      <div class="reviews-widget-wrapper reviews-widget-wrapper--gated">
-        <div class="embed-gate">
-          <p class="embed-gate-title">The latest reviews, live from Google</p>
-          <div class="embed-gate-actions">
-            <button type="button" class="btn-instagram" data-embed-load="reviews">Show live reviews</button>
-          </div>
-          <p class="embed-gate-note">Reviews load from EmbedSocial, which may set its own cookies.</p>
-        </div>
-        <div class="embedsocial-hashtag" data-ref="88aab0bce4aebfb8c0a45e082e4282576ff6c642" data-lazyload="yes">
-          <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding"
-            href="https://embedsocial.com/google-reviews-widget/" target="_blank" title="Embed Google reviews">
-            <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial" width="20" height="20"
-              loading="lazy" />
-            <div class="es-widget-branding-text">Embed Google reviews</div>
-          </a>
-        </div>
-        <noscript>
-          <p style="text-align:center;color:var(--color-text-muted);padding:var(--space-8) var(--space-4);">
-            Read all reviews on
-            <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener noreferrer">Google</a>.
-          </p>
-        </noscript>
       </div>
     </section>
 
@@ -614,15 +595,6 @@
           <p class="contact-phone">Phone: <a href="tel:+447356030600" data-cta="contact-phone">07356 030600</a></p>
           <p class="contact-phone">WhatsApp: <a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer" data-cta="contact-whatsapp">Message on WhatsApp</a></p>
           <p class="contact-email">Email: <a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></p>
-          <nav class="socials" aria-label="Social media links">
-            <a href="https://instagram.com/sinatattooer" target="_blank" rel="noopener noreferrer"
-              aria-label="Follow Sina Tattooer on Instagram">Instagram</a>
-            <a href="https://facebook.com/sinatattooer" target="_blank" rel="noopener noreferrer"
-              aria-label="Follow Sina Tattooer on Facebook">Facebook</a>
-            <a href="https://g.page/r/CVRKmF0wOcODEAE/review" target="_blank" rel="noopener noreferrer"
-              aria-label="Read Sina Tattooer reviews on Google">Google
-              Reviews</a>
-          </nav>
         </div>
         <div class="contact-map" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.765971913322!2d-1.0393137232309981!3d53.953664472471665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931349112d19b%3A0x83c339305d984a54!2sSina%20Tattooer!5e0!3m2!1sen!2suk!4v1757958345921!5m2!1sen!2suk">
           <div class="embed-gate">
@@ -680,9 +652,8 @@
       </div>
       <div class="footer-col footer-contact">
         <h3>Studio</h3>
-        <address><strong>Mr Snips Barbers</strong><br>23 Yarburgh Way<br>York, YO10 5HD<br><br><a href="tel:+447356030600">07356 030600</a><br><a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer">WhatsApp</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
-        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability.</p>
-        <p class="footer-hours">Registered with City of York Council for tattooing.</p>
+        <address><strong>Mr Snips Barbers</strong>23 Yarburgh Way<br>York YO10 5HD<br><a href="tel:+447356030600">07356 030600</a> &middot; <a href="https://wa.me/message/T7P2PQ6A7SHEK1" target="_blank" rel="noopener noreferrer">WhatsApp</a><br><a href="mailto:contact@sinatattooer.co.uk">contact@sinatattooer.co.uk</a></address>
+        <p class="footer-hours">11 am – 6 pm daily. Appointments preferred; call or message first to check walk-in availability. Registered with City of York Council for tattooing.</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -692,8 +663,8 @@
   </footer>
   <!-- /partial:footer -->
 
-  <script src="components.js?v=20261111a"></script>
-  <script src="main.js?v=20261121b"></script>
+  <script src="components.js?v=20261122a"></script>
+  <script src="main.js?v=20261122a"></script>
 
   <!-- FAQPage Schema -->
   <script type="application/ld+json">
